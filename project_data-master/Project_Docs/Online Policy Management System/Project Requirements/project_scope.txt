@@ -1,0 +1,121 @@
+
+The Online Policy Management System contains two modules.
+
+A.User
+B.Admin
+
+
+User:
+
+1)Registration:
+	System will take inputs from user like Name, Nominee, Nominee Relation, DOB,Gender,Address,City,State,Country,Pin code,Mobile,Email,PAN Number,Adhar Number,Password.It is neccessary to enter this details for registration,then it goes to login page to login into system.
+ 
+
+
+2)Log In:
+	The System will take User ID/Email ID and Password for log in into system.The valid User ID logged in into system if not then it show wrong details entered.If user is not registered then by clicking log in button it goes to registration page.
+
+
+3)User Dashboard:
+	This page contains all details of policies of user purchased and all functionalities and services provided by system.
+	Details:
+	Buy new policy
+	policy details
+	claim tracker
+	premium date
+	history of paid premium
+
+4)Buy New Policy:
+	This page shows all policies/plans which user can buy,check details,premium calculator.
+
+
+5)Individual Plan Details:
+	This page includes all details and benefits of each plan system offers.By clicking,Buy button it goes to calculator page.
+
+6)Premium Calculator:
+	 The Premium Calculator page can calculate premium amount and total amount by getting values of product ID,payment frequency.After that user can buy that policy.
+
+7)Edit Profile:
+	The User can edit Mobile Number,Email ID,user can also change password.
+
+8)Premium Pay:
+	The User can pay due premium amount on premium pay page.By clicking Pay button it goes to user dashboard.
+
+9)Policy Details:
+	Policy Details page shows all the details of policies user purchased.
+	Details:
+	Policy Number
+	Nominee
+	Address
+	Start Date
+	Maturity Date
+	Total paid Premium
+	Total invested amount
+	Total matured Amount
+
+10)History Of Paid Premium:
+	The History Of Paid Premium page displays all the history of paid premium with following details:
+	Policy Number
+	Date
+	Premium Amount
+	Total Premium count
+
+11)Claim Tracker:
+	The Claim Tracker page shows status of all claim applications.It will take input user like claim application number,DOB.It displays associated details.
+
+ADMIN :
+
+1)Admin Log in:
+	The system will take Admin ID and Password for log in into system.The valid Admin ID logged in into system if not then it show wrong details entered.And goes to admin dashboard.
+
+
+2)Admin Dashboard:
+	This page contains all functionalities and services provided by system for admin. As follows :-
+	Add new policy
+	Customer policy details
+	Make changes in existing policy
+	Manage claims
+	Inactive policies
+	
+3)Add New Policy:
+	In Add New Policy page,admin can add new plans and policies with details like benefits,years,amount of insurance.By clicking save button it goes to admin dashboard.
+
+4)Make Changes in Existing Policies:
+	In Make changes in existing policies page,admin can edit existing policy with new details and benefits.By clicking save button it goes to admin dashboard.
+
+5)Manage Claims:
+	In Manage claims,admin can add claim,edit claims status by providing following details:
+	Policy number
+	Claim application number
+	Customer/user Id
+	Claim status
+	By clicking save button it goes to admin dashboard.
+
+6)Inactive Policy:
+	In Inactive policy, admin can check all inactive policies and details of users who have inactive policies.
+
+7)Customer and Policy Details:
+	The Customer and Policy Details page contains details of customer and there associated policy details as follows:
+	Name
+	Nominee
+	Nominee Relation
+	DOB
+	Gender
+	Address
+	City
+	State
+	Country
+	Pin code
+	Mobile
+	Email
+	PAN Number
+	Adhar Number
+	Policy Number
+	Start Date
+	Maturity Date
+	Total paid Premium
+	Total invested amount
+	Total matured Amount
+	
+
+	

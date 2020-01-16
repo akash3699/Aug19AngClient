@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+  <h1 style="text-align: center;">Online Insurance Management System</h1>
+
+  
+<marquee>New updates:Insurance Policy</marquee>       
+<button type="button" routerLink="/AddPolicy" class="btn btn-info">Buy New Policy</button><br>
+<table class="table">
+<tr>
+<th>Policy ID</th>
+<th>Policy Name</th>
+<th>Policy Decription</th>
+<th>Years</th>
+<th>Buy Date</th>
+<th>Premium Amount</th>
+<th>Paid Premium Count</th>
+<th>Total Premium Count </th>
+<th></th>
+
+</tr>
+   
+   <tr routerLink="/PolicyDetails/1">
+       
+       <td>1</td>
+       <td>Policy1</td>
+       <td>Market Plus</td>
+       <td>5</td>
+       <td>15 Dec 2019</td>
+       <td>98967</td>
+       <td>14</td>
+       <td>5</td>
+       <td><input type="button" class="btn btn-info" routerLink="/PayPremium" value="Pay Premium" /></td>
+       
+       
+  </tr>
+
+
+
+</table>
+
+
+  <div class="jumbotron text-center" style="margin-bottom:0">
+    <p>Footer</p>
+  </div>
+
+</body>
+
+</html>

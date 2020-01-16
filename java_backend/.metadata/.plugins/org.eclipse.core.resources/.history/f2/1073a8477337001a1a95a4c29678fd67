@@ -1,0 +1,10 @@
+package com.example.pojos;
+import javax.persistence.*;
+public class copies {
+	
+	Integer id;
+	String status;
+	int rack;
+	int bookid;
+	
+}

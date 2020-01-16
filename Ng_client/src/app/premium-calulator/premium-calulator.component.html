@@ -1,0 +1,67 @@
+<h2 style="text-align:center">Premium Calculator</h2>
+
+    <form action="editprofile.php"  method="POST">
+      <div class="container" >
+        <table style="align-content: center;margin-left:auto;margin-right:auto;" height="300px" width="400px" >
+            
+
+          <tr>
+              <td><b>Select Policy:</b></td>
+              <td>
+              <select name="policy" id="input" class="form-control">
+                <option value="">Market Plus II</option>
+                <option value="">Market Plus I</option>
+                <option value="">Health Insurance</option>
+              </select>
+             </td>
+              
+          </tr>
+            <tr>
+                <td><b>Payment Frequency:</b></td>
+               <td>
+               <select name="freq" id="input" class="form-control">
+                 <option value="">Yearly</option>
+                 <option value="">Monthly</option>
+                 <option value="">Weekly</option>
+               </select>
+              </td>
+            
+            </tr>
+    
+            
+    
+            <tr>
+                <td colspan="2" style="text-align:center">
+                    <input type="submit" name="calbtn" class="btn btn-info" value="Calculate Premium">
+    
+                           
+                </td>
+            </tr>
+
+            <tr>
+    
+                <td><b>Premium Amount:</b></td>
+                <td>
+                    <input type="number" disabled name="Amount" required="required">
+                </td>
+            </tr>
+
+            <tr>
+    
+                <td><b>Premium Count:</b></td>
+                <td>
+                    <input type="number" disabled name="Count" required="required">
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2" style="text-align:center">
+                    <input type="submit" name="buybtn" class="btn btn-info" value="Buy Policy">
+    
+                           
+                </td>
+            </tr>
+        </table>
+
+      </div>
+    </form>

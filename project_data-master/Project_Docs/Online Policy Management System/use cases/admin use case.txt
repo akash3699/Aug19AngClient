@@ -1,0 +1,16 @@
+@startuml
+
+left to right direction
+Admin --> (Login)
+Admin --> (Forgot Password)
+Admin --> (Add New Policy)
+Admin --> (Manage Policies)
+Admin --> (Manage Claims)
+Admin --> (Customer Details)
+Admin --> (Inactive Policies)
+
+(Forgot Password) ..> (Sending OTP):(<include>)
+(Sending OTP) <.. (Add OTP) :(<exclude>)
+
+@enduml
+

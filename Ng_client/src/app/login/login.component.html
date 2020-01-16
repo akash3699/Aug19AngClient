@@ -1,0 +1,28 @@
+<!-- <div style="width: 30%;">
+<img src="./assets/insurance.jpeg" class="img-responsive" alt="DecoratorImg">
+</div> -->
+<form role="form" #myForm="ngForm" (ngSubmit)="FormValidation(myForm.value)">
+<div class="box" >
+  <div class="background">
+      <!-- <img src="./assets/pizza_icon.png" style="height: 30%; width: 15%;" alt="Online Insurance Management System_Icon" class="Icon"> -->
+  </div>
+  <h2 style="color: rgb(124, 8, 8);"><b>Welcome<br> to<br> Online Insurance Management System</b></h2>
+  <div class="container" style="text-align: left">
+      <label for="uname"><b>Email</b></label><br>
+      <input ngModel type="text" placeholder="Enter Email" name="email">
+      <br>
+      <label for="pwd"><b>Password</b></label><br>
+      <input ngModel type="password" placeholder="Enter Password" name="passwd">
+      <br>
+      <button type="submit" style=" background-color:darkcyan;">Login</button><br>
+      <!-- <label>
+          <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label><br> -->
+      <button type="button" routerLink="/Home" style="background-color: crimson;" class="cancelbtn">Cancel</button><br>
+      <button type="button" routerLink="/ForgotPassword" style="background-color: blueviolet;" class="frgtpwdbtn">Forgot Password</button><br>
+      <b style="position: absolute; left: 83px;">{{msg}}</b>
+  </div>
+</div>
+</form>
+<!-- <div class="copyright" style="margin-bottom: 0%;">All Rights Reserved. Copyright © Online Insurance Management System FoodWorks Ltd.</div> -->
+

@@ -1,0 +1,26 @@
+<div class="box">
+  <div class="container" style="text-align: left">
+    <h1><b>Edit Profile</b></h1>
+    <label for="userId">UserId</label><label for="email" style="margin: 5px 235px;">Email Address</label><br>
+
+    <input [(ngModel)]="UserData.userId" readonly style=" margin: 5px 0px;" type="text" class="form-control" id="userId"
+      name="userId">
+    <input [(ngModel)]="UserData.email" type="text" class="form-control" id="email" name="email"><br>
+
+    <label for="mobile">Phone Number</label><label for="dob" style="margin: 5px 200px;">Date of Birth</label><br>
+
+    <input [(ngModel)]="UserData.mobile" style=" margin: 5px 0px;" type="text" class="form-control" id="mobile"
+      name="mobile">
+    <input [(ngModel)]="UserData.dob" type="text" class="form-control" id="dob" name="dob"><br>
+
+    
+
+    <button type="button" (click)="UpdateUserData()" class="btn btn-primary">Update</button><br>
+    <button type="button" routerLink="/Profile" class="cancelbtn">Cancel</button>
+
+    <span>
+      {{msg}}
+    </span>
+  </div>
+</div>
+<!-- <div class="copyright">All Rights Reserved. Copyright © Online Insurance Management System FoodWorks Ltd.</div> -->

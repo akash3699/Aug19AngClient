@@ -1,0 +1,10 @@
+package com.example.pojos;
+
+import javax.persistence.*;
+
+@Entity
+@Table(name = "books")
+public class books {
+
+	
+}

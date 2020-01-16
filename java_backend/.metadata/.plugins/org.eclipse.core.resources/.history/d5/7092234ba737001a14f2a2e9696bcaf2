@@ -1,0 +1,25 @@
+package com.app.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.app.dao.IUsersDao;
+import com.app.pojos.Users;
+
+public class UsersServiceImpl implements IUsersService {
+
+	@Autowired
+	private IUsersDao dao;
+	@Override
+	public Users isValid(String email) {
+		Users u = new Users();
+		u.setEmail(email);
+		if(dao.findAll().contains(u))
+		{
+			
+			return dao.getOne(dao.findAll().indexOf(u));
+		}
+		return null;
+	}
+
+	
+}

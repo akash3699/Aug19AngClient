@@ -1,0 +1,7 @@
+package com.example.pojos;
+
+public class issuerecord {
+
+	Integer id;
+	
+}

@@ -1,0 +1,18 @@
+package com.example.dao;
+
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+
+public class BookDaoImpl implements IBookDao{
+
+	@Autowired // byType
+	private SessionFactory factory;
+
+	
+	@Override
+	public String getBooks() {
+		// TODO Auto-generated method stub
+		return "Hello";
+	}
+
+}

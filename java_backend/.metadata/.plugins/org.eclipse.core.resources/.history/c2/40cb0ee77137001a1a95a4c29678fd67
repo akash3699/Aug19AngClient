@@ -1,0 +1,9 @@
+package com.example.pojos;
+
+import javax.persistence.*;
+
+@javax.persistence.Entity
+@Table(name = "accounts")
+public class books {
+
+}

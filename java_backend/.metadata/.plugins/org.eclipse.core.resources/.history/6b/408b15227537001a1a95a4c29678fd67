@@ -1,0 +1,16 @@
+package com.example.pojos;
+
+import java.sql.Date;
+import java.sql.Time;
+
+public class payments {
+	
+	
+	Integer id;
+	float amount;
+	String type;
+	Time transaction_time;
+	Date nextpayment_duedate;
+	int userid;
+
+}

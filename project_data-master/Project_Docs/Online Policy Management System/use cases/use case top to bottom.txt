@@ -1,0 +1,37 @@
+@startuml
+
+
+
+(Add New Policy) <-- Admin
+(Manage Policies)<-- Admin
+(Manage Claims) <-- Admin
+(Customer Details) <-- Admin
+(Inactive Policies) <-- Admin
+
+
+USER --> (SignUp)
+
+USER --> (Buy Online)
+USER --> (Choose Policies)
+USER --> (Premium Calculator)
+USER --> (Premium Pay)
+USER --> (Policy Details)
+USER --> (Edit Profile)
+USER --> (Claim Tracker)
+USER --> (History of Paid Premium)
+
+(Edit Profile) <..> (Customer Details)
+(SignUp) ..> (Customer Details)
+(Choose Policies) <.. (Add New Policy)
+(Buy Online) ..> (Customer Details)
+(Claim Tracker) <.. (Manage Claims)
+(Choose Policies)  ..> (Manage Policies)
+
+
+(USER) --> (Login)
+(Login) <--- (Admin)
+
+(USER) --> (Forgot Password)
+(Forgot Password) <--- (Admin)
+
+@enduml

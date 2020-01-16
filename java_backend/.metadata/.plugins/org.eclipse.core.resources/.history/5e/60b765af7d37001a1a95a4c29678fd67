@@ -1,0 +1,6 @@
+package com.example.dao;
+
+public class IBookDao {
+	String getBooks();
+
+}

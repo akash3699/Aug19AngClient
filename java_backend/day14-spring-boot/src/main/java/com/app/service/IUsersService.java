@@ -1,0 +1,12 @@
+package com.app.service;
+
+import java.util.List;
+
+import com.app.pojos.Users;
+
+public interface IUsersService {
+
+	Users isValid(String email);
+	List<Users> getAllUsers();
+	String AddUserDetails(Users u);
+}

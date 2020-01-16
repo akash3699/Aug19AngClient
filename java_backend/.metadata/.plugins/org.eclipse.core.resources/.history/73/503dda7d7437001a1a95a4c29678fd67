@@ -1,0 +1,14 @@
+package com.example.pojos;
+
+import java.sql.Date;
+
+public class issuerecord {
+
+	Integer id;
+	Date issue_date;
+	Date return_duedate;
+	Date return_date;
+	int fine_amount;
+	int copyid;
+	int memberid;
+}

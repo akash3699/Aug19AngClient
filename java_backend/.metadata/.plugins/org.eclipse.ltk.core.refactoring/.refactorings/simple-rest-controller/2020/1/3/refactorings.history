@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;SimpleRestControllerApplicationTests.java&apos; to &apos;demo-2/src/test/java/com.example.demo&apos;&#x0A;- Original project: &apos;simple-rest-controller&apos;&#x0A;- Destination element: &apos;demo-2/src/test/java/com.example.demo&apos;&#x0A;- Original element: &apos;com.app.SimpleRestControllerApplicationTests.java&apos;" description="Copy compilation unit" destination="=demo-2/src\/test\/java&lt;com.example.demo" element1="/src\/test\/java&lt;com.app{SimpleRestControllerApplicationTests.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1579079067402" units="1" version="1.0"/>
+</session>

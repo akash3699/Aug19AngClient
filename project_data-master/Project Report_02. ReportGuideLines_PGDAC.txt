@@ -1,0 +1,16 @@
+Number of pages & Sequence in Project Report MUST be as follows:
+1. Front Page
+2. Certificate
+3. Acknowledgment
+4. Abstract
+5. Index
+6. List of Tables & Figures
+7. Introduction - 1 Page
+8. Product OverView and Summary - 2 Pages
+9. Requirments - 4 Pages
+10. Project Design, Class Daigram, E-R Daigram - 10 Pages
+11. Database Design - 8 Pages
+12. Test Report - 1 or 2 Pages
+13. Project Screenshots - 6 Pages
+14. Conclusion - 1 Page
+15. References - 1 Page

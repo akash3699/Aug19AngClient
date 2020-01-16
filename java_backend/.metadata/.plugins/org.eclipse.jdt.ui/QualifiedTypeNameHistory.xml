@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="com.app.pojos.Books"/>
+    <fullyQualifiedTypeName name="com.app.pojos.Payments"/>
+    <fullyQualifiedTypeName name="com.app.pojos.Copies"/>
+    <fullyQualifiedTypeName name="com.app.pojos.Issuerecord"/>
+    <fullyQualifiedTypeName name="com.app.service.IBooksService"/>
+    <fullyQualifiedTypeName name="com.app.service.ICopiesService"/>
+    <fullyQualifiedTypeName name="com.app.service.IIssueRecordService"/>
+    <fullyQualifiedTypeName name="com.app.service.IPaymentsService"/>
+    <fullyQualifiedTypeName name="java.lang.String"/>
+    <fullyQualifiedTypeName name="com.app.dao.IUsersDao"/>
+    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+    <fullyQualifiedTypeName name="com.app.service.IUsersService"/>
+    <fullyQualifiedTypeName name="com.app.pojos.Users"/>
+    <fullyQualifiedTypeName name="java.util.function.Function"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.util.ListIterator"/>
+    <fullyQualifiedTypeName name="org.apache.catalina.User"/>
+    <fullyQualifiedTypeName name="java.util.Iterator"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PostMapping"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMapping"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.ModelAttribute"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestBody"/>
+</qualifiedTypeNameHistroy>

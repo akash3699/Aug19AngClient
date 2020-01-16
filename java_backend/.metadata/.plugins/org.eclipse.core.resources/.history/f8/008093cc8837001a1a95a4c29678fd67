@@ -1,0 +1,89 @@
+package com.app.pojo;
+
+import java.sql.Date;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "issuerecord")
+public class Issuerecord {
+
+	@Id
+	@GeneratedValue
+	Integer id;
+	Date issue_date;
+	Date return_duedate;
+	Date return_date;
+	int fine_amount;
+	int copyid;
+	int memberid;
+	public Issuerecord() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	public Issuerecord(Integer id, Date issue_date, Date return_duedate, Date return_date, int fine_amount, int copyid,
+			int memberid) {
+		super();
+		this.id = id;
+		this.issue_date = issue_date;
+		this.return_duedate = return_duedate;
+		this.return_date = return_date;
+		this.fine_amount = fine_amount;
+		this.copyid = copyid;
+		this.memberid = memberid;
+	}
+
+	public Integer getId() {
+		return id;
+	}
+	public void setId(Integer id) {
+		this.id = id;
+	}
+	public Date getIssue_date() {
+		return issue_date;
+	}
+	public void setIssue_date(Date issue_date) {
+		this.issue_date = issue_date;
+	}
+	public Date getReturn_duedate() {
+		return return_duedate;
+	}
+	public void setReturn_duedate(Date return_duedate) {
+		this.return_duedate = return_duedate;
+	}
+	public Date getReturn_date() {
+		return return_date;
+	}
+	public void setReturn_date(Date return_date) {
+		this.return_date = return_date;
+	}
+	public int getFine_amount() {
+		return fine_amount;
+	}
+	public void setFine_amount(int fine_amount) {
+		this.fine_amount = fine_amount;
+	}
+	public int getCopyid() {
+		return copyid;
+	}
+	public void setCopyid(int copyid) {
+		this.copyid = copyid;
+	}
+	public int getMemberid() {
+		return memberid;
+	}
+	public void setMemberid(int memberid) {
+		this.memberid = memberid;
+	}
+
+	@Override
+	public String toString() {
+		return "issuerecord [id=" + id + ", issue_date=" + issue_date + ", return_duedate=" + return_duedate
+				+ ", return_date=" + return_date + ", fine_amount=" + fine_amount + ", copyid=" + copyid + ", memberid="
+				+ memberid + "]";
+	}
+	
+	
+}

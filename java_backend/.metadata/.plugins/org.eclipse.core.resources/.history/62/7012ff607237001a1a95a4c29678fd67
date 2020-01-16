@@ -1,0 +1,17 @@
+package com.example.pojos;
+
+import javax.persistence.*;
+
+@Entity
+@Table(name = "books")
+public class books {
+
+	Integer id ;
+	String name;
+	String author;
+	String subject;
+	float price;
+	String isbn;
+	
+	
+}

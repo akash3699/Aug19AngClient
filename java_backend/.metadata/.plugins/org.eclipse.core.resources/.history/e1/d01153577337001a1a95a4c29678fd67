@@ -1,0 +1,14 @@
+package com.example.pojos;
+import javax.persistence.*;
+
+@Entity
+public class copies {
+	
+	@Id
+	@GeneratedValue
+	Integer id;
+	String status;
+	int rack;
+	int bookid;
+	
+}

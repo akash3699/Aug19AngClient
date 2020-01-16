@@ -1,0 +1,21 @@
+package com.example.pojos;
+
+import javax.persistence.*;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
+@Table(name = "books")
+public class books {
+
+	@Id
+	@GeneratedValue
+	Integer id ;
+	String name;
+	String author;
+	String subject;
+	float price;
+	String isbn;
+	
+	
+}

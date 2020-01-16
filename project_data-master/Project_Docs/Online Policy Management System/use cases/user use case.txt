@@ -1,0 +1,22 @@
+@startuml
+
+left to right direction
+
+
+
+USER --> (SignUp)
+USER --> (Login)
+USER --> (Forgot Password)
+USER --> (Buy Online)
+USER --> (Choose Policies)
+USER --> (Premium Calculator)
+USER --> (Premium Pay)
+USER --> (Policy Details)
+USER --> (Edit Profile)
+USER --> (Claim Tracker)
+USER --> (History of Paid Premium)
+
+(Forgot Password) ..> (Sending OTP):(<include>)
+(Sending OTP) <.. (Add OTP) :(<exclude>)
+@enduml
+

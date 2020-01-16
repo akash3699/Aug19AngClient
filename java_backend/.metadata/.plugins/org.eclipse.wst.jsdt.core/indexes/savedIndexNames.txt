@@ -1,0 +1,1 @@
+INDEX VERSION 1.4+/home/sunbeam/myproject/java_backend/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
