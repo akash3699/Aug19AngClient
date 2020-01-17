@@ -5,20 +5,29 @@
             <img src="./assets/icons-user-profile.png" style="height: 150px; width: 150px;" alt="Online Insurance Management System_Icon"
                 class="Icon">
         </div>
-        <h2 style="color: rgb(124, 8, 8);"><b>{{UserProfileData.email}}</b></h2>
+        <h2 style="color: rgb(124, 8, 8);"><b>{{UserProfileData.fname}}</b></h2>
         <div class="container" style="text-align: left">
-            <label><b>Email Address</b></label><br>
-            <div>{{this.UserProfileData.email}}</div>
+            <label><b>First Name</b></label>
+            <div>{{this.UserProfileData.fname}}</div>
             <br>
-            <label><b>Phone Number</b></label><br>
+            <label><b>Middle Name</b></label>
+            <div>{{this.UserProfileData.mname}}</div>
+            <br>
+            <label><b>Last Name</b></label>
+            <div>{{this.UserProfileData.lname}}</div>
+            <br>
+            <label><b>Gender</b></label>
+            <div>{{this.UserProfileData.gender}}</div>
+            <br>
+            <label><b>Phone Number</b></label>
             <div>+91 {{this.UserProfileData.mobile}}</div>
             <br>
-            <!-- <label><b>Date of Birth</b></label><br>
-            <div>{{this.UserProfileData.dob}}</div>
-            <br> -->
-            <button type="submit" routerLink="/EditProfile/{{this.UserProfileData.userId}}">Edit Profile</button><br>
+            <label><b>Date of Birth</b></label>
+            <div>{{this.UserProfileData.dob |  date:'yyyy-MM-dd'}}</div>
+            <br>
+            <button type="submit" routerLink="/EditProfile">Edit Profile</button><br>
             <!-- <label><input type="checkbox" checked="checked" name="remember"> Remember me</label><br> -->
-            <button type="button"  class="cancelbtn" routerLink="/MyOrder">My Order</button><br>
+            <!-- <button type="button"  class="cancelbtn" routerLink="/MyOrder">My Order</button><br> -->
             <b style="position: absolute; left: 83px;">{{msg}}</b>
         </div>
     </div>

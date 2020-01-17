@@ -1,19 +1,34 @@
 <div class="box">
   <div class="container" style="text-align: left">
     <h1><b>Edit Profile</b></h1>
+
     <label for="userId">UserId</label><label for="email" style="margin: 5px 235px;">Email Address</label><br>
 
     <input [(ngModel)]="UserData.userId" readonly style=" margin: 5px 0px;" type="text" class="form-control" id="userId"
       name="userId">
-    <input [(ngModel)]="UserData.email" type="text" class="form-control" id="email" name="email"><br>
+    <input [(ngModel)]="UserData.email" readonly type="text" class="form-control" id="email" name="email"><br>
 
-    <label for="mobile">Phone Number</label><label for="dob" style="margin: 5px 200px;">Date of Birth</label><br>
+
+    <label for="fname">Fisrt Name</label><label for="lname" style="margin: 5px 200px;">Last Name</label><br>
+    <input [(ngModel)]="UserData.fname"  style=" margin: 5px 0px;" type="text" class="form-control" id="fname"
+      name="fname">
+    <input [(ngModel)]="UserData.lname" type="text" class="form-control" id="lname" name="lname"><br>
+
+    
+
+    <label for="mobile">Phone Number</label><label for="dob" style="margin: 5px 200px;">Date of Birth: {{this.dob |  date:'yyyy-MM-dd'}}</label><br>
 
     <input [(ngModel)]="UserData.mobile" style=" margin: 5px 0px;" type="text" class="form-control" id="mobile"
       name="mobile">
-    <input [(ngModel)]="UserData.dob" type="text" class="form-control" id="dob" name="dob"><br>
+      
+    <input [(ngModel)]="UserData.dob"  type="date" class="form-control" id="dob" name="dob"><br>
 
-    
+    <label for="gender">Gender</label><br>
+    <select class="select" [(ngModel)]="UserData.gender" name="gender">
+      <option [value]="MALE">MALE</option>
+      <option [value]="FEMALE">FEMALE</option>
+      <option [value]="OTHER">OTHER</option>
+    </select><br>
 
     <button type="button" (click)="UpdateUserData()" class="btn btn-primary">Update</button><br>
     <button type="button" routerLink="/Profile" class="cancelbtn">Cancel</button>

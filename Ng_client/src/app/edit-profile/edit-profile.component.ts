@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DataService } from '../data.service';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-edit-profile',
@@ -9,6 +10,7 @@ import { DataService } from '../data.service';
 })
 export class EditProfileComponent implements OnInit {
   UserData:any;
+  dob:any;
   msg:string;
   constructor(public routes: ActivatedRoute,
     public DataService: DataService,
@@ -20,10 +22,11 @@ export class EditProfileComponent implements OnInit {
     let EditParas = this.routes.paramMap;
 
     EditParas.subscribe((params) => {
-      let userId = params.get("userId");
+      let userId = sessionStorage.userid;
       let StatusOfUserSearched = this.DataService.UserProfileData(userId);
       StatusOfUserSearched.subscribe((result: any) => {
-        
+        // result.dob= new DatePipe(result.dob);
+          this.dob=result.dob;
           this.UserData = result;
           console.log(this.UserData);
         

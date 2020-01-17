@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
 
   Login(credentials: { email: any; passwd: any; })
   {
-    debugger
+    
     
     let isLoggedIn = false;
     let FindUser = this.Data_service.LoginData(credentials);

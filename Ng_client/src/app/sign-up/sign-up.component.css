@@ -86,8 +86,9 @@ span.psw {
   text-align: center;
   top: 53%;
   left: 50%;
+  margin-top: 10px;
   transform: translate(-50%, -50%);
-  height: 735px;
+  height: 550px;
   width: 460px;
   padding: 40px;
   padding-top: 12px;

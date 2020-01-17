@@ -9,22 +9,22 @@
       
       
   </tr>
-  
+  <tbody >
          
-         <tr>
+         <tr *ngFor="let policy of AllPolicyData">
              
-          <td>2</td>
-          <td>Policy2</td>
-          <td>Market PlusIII</td>
+          <td>{{policy.policyid}}</td>
+          <td>{{policy.policyname}}</td>
+          <td>{{policy.policydescription}}</td>
           
-          <td>14</td>
+          <td>{{policy.policyduration}}</td>
           
-          <td>98967</td>
+          <td>{{policy.totalinsuranceamount}}</td>
           
-             <td><input type="button" id="btnBUY" class="btn btn-info" name="btnBUY" routerLink="/PremiumCalculator" value="BUY" policyID="" ></td>
+             <td><input type="button" id="btnBUY" class="btn btn-info" name="btnBUY" routerLink="/PremiumCalculator/{{policy.policyid}}" value="BUY" policyID="" ></td>
              
         </tr>
    
 
-
+      </tbody>
 </table>

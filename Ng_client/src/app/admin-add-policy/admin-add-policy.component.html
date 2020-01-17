@@ -1,6 +1,6 @@
 <h2 style="text-align:center">Add Policy</h2>
 
-    <form action="editprofile.php" method="POST">
+    <form #myForm="ngForm" (ngSubmit)="FormValidation(myForm)">
         <table style="align-content: center;margin-left:auto;margin-right:auto;" height="300px" width="400px" >
             
     
@@ -8,7 +8,7 @@
     
                 <td><b> Policy Name:</b></td>
                 <td>
-                    <input type="text" name="PolicyName" required="required">
+                    <input ngModel type="text" name="policyname" required="required">
                 </td>
             </tr>
     
@@ -16,7 +16,8 @@
     
                 <td><b>Benefits:</b></td>
                 <td>
-                    <input type="text" name="PolicyDescription" required="required">
+                    
+                    <textarea ngModel name="policydescription" id="policydescription" cols="30" rows="5"></textarea>
                 </td>
             </tr>
 
@@ -24,7 +25,7 @@
     
                 <td><b>Years:</b></td>
                 <td>
-                    <input type="Number" name="PolicyDuration" required="required">
+                    <input ngModel type="Number" name="policyduration" required="required">
                 </td>
             </tr>
 
@@ -32,17 +33,18 @@
     
                 <td><b>Amount for Insurance:</b></td>
                 <td>
-                    <input type="Number" name="Totle Insurance Amount" required="required">
+                    <input ngModel type="Number" name="totalinsuranceamount" required="required">
                 </td>
             </tr>
     
             <tr>
                 <td colspan="2" style="text-align:center">
                     <input type="submit" name="addpolicytbtn" class="btn btn-info" value="Add Policy">
-    
+                    <label style="position: absolute; left: 150px; "><b>{{msg}}</b></label>
                            
                 </td>
             </tr>
+            
         </table>
 
 

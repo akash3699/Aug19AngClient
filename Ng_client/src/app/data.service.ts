@@ -14,12 +14,32 @@ export class DataService {
   SignupData(signup_data: any) {
     return this.http.post("http://localhost:8080/DacAug2019/user/register", signup_data);
   }
+
+  AddPolicyData(policy_data: any) {
+    return this.http.post("http://localhost:8080/DacAug2019/policy/register", policy_data);
+  }
+
   UserProfileData(userid: any)
   {
-    
-    
     return this.http.get("http://localhost:8080/DacAug2019/user/userdetails/" + userid);
   }
+
+  GetAllPolicyData()
+  {
+    return this.http.get("http://localhost:8080/DacAug2019/policy/allpolicies");
+  }
+
+  GetAllPolicyDataById(policyid:any)
+  {
+    return this.http.get("http://localhost:8080/DacAug2019/policy/"+policyid);
+  }
+
+  BuyPolicy(UserPolicyData:any)
+  {
+    return this.http.post("http://localhost:8080/DacAug2019/user/buypolicy",UserPolicyData);
+  }
+
+
   // GetUserByUserId(uname: any)
   // {
   //   return this.http.get("http://localhost:4000/editprofile/" + uname);

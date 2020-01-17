@@ -79,8 +79,9 @@ body {
     text-align: center;
     top: 50%;
     left: 50%;
+    margin-top: 150px;
     transform: translate(-50%, -50%);
-    height: 625px;
+    height: 800px;
     width: 400px;
     padding: 40px;
     padding-top: 15px;

@@ -19,6 +19,7 @@ export class AuthService implements CanActivate {
   {
     if(this.isLoggedIn())
     {
+      
       return true;
     }
     else
@@ -38,10 +39,14 @@ export class AuthService implements CanActivate {
     // if (credentials.email == result_data.email &&
     //     crypto_pwd   == result_data.passwd)
     // {
+
+    
       sessionStorage.setItem("isLoggedIn", "1");
       sessionStorage.setItem("email", result_data.email);
       sessionStorage.setItem("userid", result_data.userId);
+      sessionStorage.setItem("roleID", result_data.roleID);
       sessionStorage.setItem("userdata", result_data);
+      console.log(result_data.roleID)
       this.UserData = result_data;
 
       return true;
@@ -56,6 +61,9 @@ export class AuthService implements CanActivate {
     sessionStorage.setItem("isLoggedIn", "0");
     delete sessionStorage["email"];
     delete sessionStorage["userid"];
+    delete sessionStorage["roleID"];
+    delete sessionStorage["userdata"];
+    delete sessionStorage["isLoggedIn"];
     this.router.navigate(['Login']);
   }
 

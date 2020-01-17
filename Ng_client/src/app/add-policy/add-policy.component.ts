@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-policy',
@@ -7,9 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddPolicyComponent implements OnInit {
 
-  constructor() { }
+  AllPolicyData:any;
+  constructor(
+    public DataService: DataService,
+    public router: Router) { 
+    
+  }
 
   ngOnInit() {
+    let StatusOfUserSearched = this.DataService.GetAllPolicyData()
+      StatusOfUserSearched.subscribe((result: any) => {
+        // result.dob= new DatePipe(result.dob);
+          
+          this.AllPolicyData = result;
+          console.log(this.AllPolicyData);
+        
+      });
   }
 
 }

@@ -1,28 +1,24 @@
 <h2 style="text-align:center">Premium Calculator</h2>
 
-    <form action="editprofile.php"  method="POST">
+    <form >
       <div class="container" >
         <table style="align-content: center;margin-left:auto;margin-right:auto;" height="300px" width="400px" >
             
 
           <tr>
-              <td><b>Select Policy:</b></td>
+              <td><b> Policy Name:</b></td>
               <td>
-              <select name="policy" id="input" class="form-control">
-                <option value="">Market Plus II</option>
-                <option value="">Market Plus I</option>
-                <option value="">Health Insurance</option>
-              </select>
+             <input type="text" [(ngModel)]="PolicyData.policyname" readonly name="policyname" id="policyname" >
              </td>
               
           </tr>
             <tr>
                 <td><b>Payment Frequency:</b></td>
                <td>
-               <select name="freq" id="input" class="form-control">
-                 <option value="">Yearly</option>
-                 <option value="">Monthly</option>
-                 <option value="">Weekly</option>
+               <select name="ps" [(ngModel)]="PolicyData.ps" id="ps" class="form-control">
+                 <option value="YEARLY">Yearly</option>
+                 <option value="MONTHLY">Monthly</option>
+                 <option value="WEEKLY">Weekly</option>
                </select>
               </td>
             
@@ -32,7 +28,7 @@
     
             <tr>
                 <td colspan="2" style="text-align:center">
-                    <input type="submit" name="calbtn" class="btn btn-info" value="Calculate Premium">
+                    <input type="button" (click)="CalculatePremium()"  name="calbtn" class="btn btn-info" value="Calculate Premium">
     
                            
                 </td>
@@ -42,7 +38,7 @@
     
                 <td><b>Premium Amount:</b></td>
                 <td>
-                    <input type="number" disabled name="Amount" required="required">
+                    <input type="number" [(ngModel)]="PolicyData.premiumamout" disabled name="premiumamout" required="required">
                 </td>
             </tr>
 
@@ -50,13 +46,13 @@
     
                 <td><b>Premium Count:</b></td>
                 <td>
-                    <input type="number" disabled name="Count" required="required">
+                    <input type="number" [(ngModel)]="PolicyData.totalpremiumcount" disabled name="totalpremiumcount" required="required">
                 </td>
             </tr>
 
             <tr>
                 <td colspan="2" style="text-align:center">
-                    <input type="submit" name="buybtn" class="btn btn-info" value="Buy Policy">
+                    <input type="button" (click)="BuyPolicy()" name="buybtn" class="btn btn-info" value="Buy Policy">
     
                            
                 </td>
