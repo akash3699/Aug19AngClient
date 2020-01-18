@@ -71,7 +71,7 @@ import { AdminService } from './admin.service';
       {path : "Admin" , component : AdminCustomerPolicyDetailsComponent, canActivate: [AuthService]},
       {path : "ChangePassword" , component : ChangePasswordComponent, canActivate: [AuthService]},
       {path : "PremiumCalculator/:policyId" , component : PremiumCalulatorComponent, canActivate: [AuthService]},
-      {path : "PayPremium" , component : PayPremiumComponent, canActivate: [AuthService]},
+      {path : "PayPremium/:premiumscheduleid" , component : PayPremiumComponent, canActivate: [AuthService]},
       {path : "HistoryofPaidPremium" , component : HistoryofPaidPremiumComponent, canActivate: [AuthService]},
       {path : "Profile" , component : ProfileComponent },
       {path : "EditProfile" , component : EditProfileComponent, canActivate: [AuthService]},

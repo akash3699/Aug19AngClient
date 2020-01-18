@@ -8,7 +8,7 @@
     
                 <td><b> Policy Name:</b></td>
                 <td>
-                    <input type="text" disabled name="PolicyName" value="Policy1" required="required">
+                    <input type="text"  name="policyname" value="{{this.PolicyData.policyname}}" required="required">
                 </td>
             </tr>
     
@@ -16,7 +16,10 @@
     
                 <td><b>Benefits:</b></td>
                 <td>
-                    <input type="text" disabled value="Market Plus" name="PolicyDescription" required="required">
+                    
+                    <textarea name="policydescription" id="policydescription" class="form-control" rows="3" required="required">{{this.PolicyData.policydescription}}</textarea>
+                    
+                    <!-- <input type="text" disabled value="{{this.PolicyData.policydescription}}" name="policydescription" required="required"> -->
                 </td>
             </tr>
 
@@ -24,7 +27,7 @@
     
                 <td><b>Years:</b></td>
                 <td>
-                    <input type="Number" disabled value="5" name="PolicyDuration" required="required">
+                    <input type="Number"  value="{{this.PolicyData.policyduration}}" name="policyduration" required="required">
                 </td>
             </tr>
 
@@ -32,10 +35,12 @@
     
                 <td><b>Amount for Insurance:</b></td>
                 <td>
-                    <input type="Number" disabled value="98967" name="Totle Insurance Amount" required="required">
+                    <input type="Number"  value="{{this.PolicyData.totalinsuranceamount}}" name="totalinsuranceamount" required="required">
                 </td>
             </tr>
-    
+            <tr>
+                    <input type="button" routerLink="/Home"  name="bckbtn" class="btn btn-info" value="Back">
+            </tr>
             
         </table>
 

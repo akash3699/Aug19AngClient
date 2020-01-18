@@ -1,6 +1,7 @@
 import { Component, OnInit, Query } from '@angular/core';
 import { DataService } from '../data.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Alert } from 'selenium-webdriver';
 
 @Component({
   selector: 'app-premium-calulator',
@@ -13,7 +14,7 @@ export class PremiumCalulatorComponent implements OnInit {
   msg:string
   param1: string;
 
-constructor(private route: ActivatedRoute,private DataService:DataService) {
+constructor(private route: ActivatedRoute,private DataService:DataService,private router:Router) {
     console.log('Called Constructor');
     this.route.queryParams.subscribe(params => {
         this.param1 = this.route.snapshot.params.policyId
@@ -63,6 +64,8 @@ constructor(private route: ActivatedRoute,private DataService:DataService) {
     StatusOfUpdate.subscribe((result:any)=>{
       
       console.log(result)
+      alert("Purchased SuccessFully")
+      this.router.navigate(["Home"])
     },(error)=>{
       console.log(error)
     });

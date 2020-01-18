@@ -40,6 +40,10 @@ export class DataService {
   }
 
 
+  GetCustPolicyData(Userid:any)
+  {
+    return this.http.get("http://localhost:8080/DacAug2019/user/userpolicydetails/"+Userid);
+  }
   // GetUserByUserId(uname: any)
   // {
   //   return this.http.get("http://localhost:4000/editprofile/" + uname);

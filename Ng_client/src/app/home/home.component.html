@@ -16,22 +16,26 @@
 <th>Buy Date</th>
 <th>Premium Amount</th>
 <th>Paid Premium Count</th>
-<th>Total Premium Count </th>
-<th></th>
+<th>Total Insurance Amount </th>
+<th>Next Premium Date </th>
+<th>Premium Payment Frequency</th>
+<th>Pay Premium</th>
 
 </tr>
    
-   <tr routerLink="/PolicyDetails/1">
+   <tr *ngFor="let custdata of CustPolicyData" routerLink="/PolicyDetails/{{this.custdata.policyid.policyid}}">
        
-       <td>1</td>
-       <td>Policy1</td>
-       <td>Market Plus</td>
-       <td>5</td>
-       <td>15 Dec 2019</td>
-       <td>98967</td>
-       <td>14</td>
-       <td>5</td>
-       <td><input type="button" class="btn btn-info" routerLink="/PayPremium" value="Pay Premium" /></td>
+       <td>{{this.custdata.policyid.policyid}}</td>
+       <td>{{this.custdata.policyid.policyname}}</td>
+       <td>{{this.custdata.policyid.policydescription}}</td>
+       <td>{{this.custdata.policyid.policyduration}}</td>
+       <td>{{this.custdata.buydate  |  date:'yyyy-MM-dd'}}</td>
+       <td>{{this.custdata.premiumamout}}</td>
+       <td>{{this.custdata.paidpremiumcount}}</td>
+       <td>{{this.custdata.policyid.totalinsuranceamount}}</td>
+       <td>{{this.custdata.premiumschedule[0].premiumdate  |  date:'yyyy-MM-dd' }}</td>
+       <td>{{this.custdata.ps}}</td>
+       <td><input type="button" class="btn btn-info" routerLink="/PayPremium/{{this.custdata.premiumschedule[0].premiumscheduleid}}" value="Pay Premium" /></td>
        
        
   </tr>
@@ -41,9 +45,7 @@
 </table>
 
 
-  <div class="jumbotron text-center" style="margin-bottom:0">
-    <p>Footer</p>
-  </div>
+  
 
 </body>
 
