@@ -29,6 +29,7 @@ import { HistoryofPaidPremiumComponent } from './historyof-paid-premium/historyo
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { AdminCustomerPolicyDetailsComponent } from './admin-customer-policy-details/admin-customer-policy-details.component';
 import { AdminService } from './admin.service';
+import { AdminPolicyDetailsComponent } from './admin-policy-details/admin-policy-details.component';
 
 
 @NgModule({
@@ -52,7 +53,8 @@ import { AdminService } from './admin.service';
     PolicyDetailsComponent,
     HistoryofPaidPremiumComponent,
     ForgotPasswordComponent,
-    AdminCustomerPolicyDetailsComponent
+    AdminCustomerPolicyDetailsComponent,
+    AdminPolicyDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -66,9 +68,9 @@ import { AdminService } from './admin.service';
       {path : "AddPolicy" , component : AddPolicyComponent, canActivate: [AuthService]},
       {path : "MyProfile" , component : MyProfileComponent, canActivate: [AuthService]},
       {path : "Admin/AddPolicy" , component : AdminAddPolicyComponent, canActivate: [AuthService]},
-      {path : "Admin/ManagePolicy/:policyId" , component : AdminManagePolicyComponent, canActivate: [AuthService]},
+      {path : "Admin/ManagePolicy/:policyid" , component : AdminManagePolicyComponent, canActivate: [AuthService]},
       {path : "Admin/CustomerPolicyDetails" , component : AdminCustomerPolicyDetailsComponent, canActivate: [AuthService]},
-      {path : "Admin" , component : AdminCustomerPolicyDetailsComponent, canActivate: [AuthService]},
+      {path : "Admin" , component : AdminPolicyDetailsComponent, canActivate: [AuthService]},
       {path : "ChangePassword" , component : ChangePasswordComponent, canActivate: [AuthService]},
       {path : "PremiumCalculator/:policyId" , component : PremiumCalulatorComponent, canActivate: [AuthService]},
       {path : "PayPremium/:premiumscheduleid" , component : PayPremiumComponent, canActivate: [AuthService]},

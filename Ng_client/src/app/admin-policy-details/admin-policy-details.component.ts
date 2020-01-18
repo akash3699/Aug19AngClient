@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../data.service';
 import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
-import { DataService } from '../data.service';
 
 @Component({
-  selector: 'app-admin-customer-policy-details',
-  templateUrl: './admin-customer-policy-details.component.html',
-  styleUrls: ['./admin-customer-policy-details.component.css']
+  selector: 'app-admin-policy-details',
+  templateUrl: './admin-policy-details.component.html',
+  styleUrls: ['./admin-policy-details.component.css']
 })
-export class AdminCustomerPolicyDetailsComponent implements OnInit {
+export class AdminPolicyDetailsComponent implements OnInit {
 
-  AllCustPolicyData:any
+  AllPolicyData:any
   msg:string
   constructor(private DataService:DataService,private AuthService:AuthService, private router:Router) { 
     if(sessionStorage.roleID!=0)
@@ -28,13 +28,13 @@ export class AdminCustomerPolicyDetailsComponent implements OnInit {
 
   ngOnInit() {
 
-    let resultstate:any = this.DataService.GetAllUsersPolicyData()
+    let resultstate:any = this.DataService.GetAllPolicyData()
       // console.log(PolicyData.form.value)
       resultstate.subscribe((data: any) => {
         // if (data.error == null) {
           // this.msg = "Successfully Added Up!!";
           console.log(data)
-         this.AllCustPolicyData=data
+         this.AllPolicyData=data
         // }
         // else {
         //   // console.log(data);
@@ -49,3 +49,4 @@ export class AdminCustomerPolicyDetailsComponent implements OnInit {
     
   }
 }
+

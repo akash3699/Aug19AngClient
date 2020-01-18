@@ -9,8 +9,8 @@
 <button type="button" routerLink="/Admin/AddPolicy" class="btn btn-info">Add New Policy</button><br>
 <table class="table">
 <tr>
-<th>Customer ID</th>
-<th>Customer Name</th>
+<th>Customer Policy ID</th>
+<!-- <th>Customer Name</th> -->
 <th>Policy ID</th>
 <th>Policy Name</th>
 <th>Years</th>
@@ -22,17 +22,18 @@
 
 </tr>
    
-   <tr routerLink="/Admin/ManagePolicy/1">
-    <td>Customer ID</td>
-    <td>Customer Name</td>
-       <td>1</td>
-       <td>Policy1</td>
+   <tr routerLink="/Admin/ManagePolicy/1" *ngFor="let cpdetails of AllCustPolicyData" >
+    <td>{{cpdetails.cpid}}</td>
+    <!-- <td>Customer Name</td> -->
+       <td>{{cpdetails.policyid.policyid}}</td>
+       <td>{{cpdetails.policyid.policyname}}</td>
        
-       <td>5</td>
-       <td>15 Dec 2019</td>
-       <td>98967</td>
-       <td>14</td>
-       <td>5</td>
+       <td>{{cpdetails.policyid.policyduration}}</td>
+
+       <td>{{cpdetails.buydate |  date:'yyyy-MM-dd'}}</td>
+       <td>{{cpdetails.premiumamout}}</td>
+       <td>{{cpdetails.paidpremiumcount}}</td>
+       <td>{{cpdetails.totalpremiumcount}}</td>
        
        
   </tr>

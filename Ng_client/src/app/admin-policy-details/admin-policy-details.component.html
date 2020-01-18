@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+  <h1 style="text-align: center;">Admin - Online Insurance Management System</h1>
+
+  
+  
+<button type="button" routerLink="/Admin/AddPolicy" class="btn btn-info">Add New Policy</button><br>
+<table class="table">
+<tr>
+
+<th>Policy ID</th>
+<th>Policy Name</th>
+<th>Policy Description</th>
+<th>Years</th>
+<th>Total Insurance Amount</th>
+
+<th></th>
+
+</tr>
+   
+   <tr routerLink="/Admin/ManagePolicy/1" *ngFor="let policy of AllPolicyData" >
+       <td>{{policy.policyid}}</td>
+       <td>{{policy.policyname}}</td>
+       <td>{{policy.policydescription}}</td>
+       <td>{{policy.policyduration}}</td>
+       <td>{{policy.totalinsuranceamount}}</td>
+
+       
+       
+       
+  </tr>
+
+
+
+</table>
+
+
+  <div class="jumbotron text-center" style="margin-bottom:0">
+    <p>Footer</p>
+  </div>
+
+</body>
+
+</html>

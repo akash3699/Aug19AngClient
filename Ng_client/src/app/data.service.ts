@@ -19,6 +19,10 @@ export class DataService {
     return this.http.post("http://localhost:8080/DacAug2019/policy/register", policy_data);
   }
 
+  ForgotUserPasswordData(emaildata: any) {
+    return this.http.post("http://localhost:8080/DacAug2019/user/forgotpassword", emaildata);
+  }
+
   UserProfileData(userid: any)
   {
     return this.http.get("http://localhost:8080/DacAug2019/user/userdetails/" + userid);
@@ -29,6 +33,11 @@ export class DataService {
     return this.http.get("http://localhost:8080/DacAug2019/policy/allpolicies");
   }
 
+  GetAllUsersPolicyData()
+  {
+    return this.http.get("http://localhost:8080/DacAug2019/user/alluserpolicydetails");
+  }
+
   GetAllPolicyDataById(policyid:any)
   {
     return this.http.get("http://localhost:8080/DacAug2019/policy/"+policyid);
@@ -37,6 +46,11 @@ export class DataService {
   BuyPolicy(UserPolicyData:any)
   {
     return this.http.post("http://localhost:8080/DacAug2019/user/buypolicy",UserPolicyData);
+  }
+
+  UpdatePolicy(PolicyData:any)
+  {
+    return this.http.put("http://localhost:8080/DacAug2019/policy/update",PolicyData);
   }
 
 
