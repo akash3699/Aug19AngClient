@@ -92,5 +92,9 @@ export class DataService {
     return this.http.get("http://localhost:8080/DacAug2019/custpolicy/paynextpremiumschedule/"+CustPolicyId);
   }
 
+  GetPaidDateByPremiumSchedule(PremiumScheduleId:number)
+  {
+    return this.http.get("http://localhost:8080/DacAug2019/custpolicy/gethistoryofpaidpremiumbypremiumscheduleid/"+PremiumScheduleId);
+  }
 
 }

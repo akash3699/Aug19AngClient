@@ -50,7 +50,7 @@ export class PayPremiumComponent implements OnInit {
    
     statusofpolicyresult.subscribe((result)=>{
       console.log(result);
-      window.alert(result)
+      window.alert(JSON.stringify(result))
       this.router.navigate(["Home"])
     },(error)=>{
       console.log(error);

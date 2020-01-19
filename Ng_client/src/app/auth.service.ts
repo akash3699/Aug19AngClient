@@ -45,7 +45,7 @@ export class AuthService implements CanActivate {
       sessionStorage.setItem("email", result_data.email);
       sessionStorage.setItem("userid", result_data.userId);
       sessionStorage.setItem("roleID", result_data.roleID);
-      sessionStorage.setItem("userdata", result_data);
+      sessionStorage.setItem("userdata", JSON.stringify(result_data));
       console.log(result_data.roleID)
       this.UserData = result_data;
 

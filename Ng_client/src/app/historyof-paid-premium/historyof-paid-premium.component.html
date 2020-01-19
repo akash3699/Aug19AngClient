@@ -11,27 +11,27 @@
 <tr>
 <th>Policy ID</th>
 <th>Policy Name</th>
-<th>Paid Date</th>
+<th>Paid Date And Time</th>
 <th>Premium Amount</th>
-<th>Total Premium Count </th>
+<!-- <th>Total Premium Count </th> -->
 <th></th>
 
 </tr>
-   
-   <tr>
-       
-       <td>1</td>
-       <td>Policy1</td>
-       <td>15 Dec 2019</td>
-       <td>9867</td>
-       <td>14</td>
+   <!-- <tr *ngFor="let psdata of this.CustPolicyData.premiumschedule.historyofpaidpremium"> -->
+   <ng-container *ngFor="let custdata of CustPolicyData;let i=index">
+    <tr  *ngFor="let psdata of custdata.premiumschedule">
+       <td>{{this.custdata.policyid.policyid}}</td>
+       <td>{{this.custdata.policyid.policyname}}</td>
+       <td>{{psdata.historyofpaidpremium.paiddate | date:'yyyy-MM-dd HH:mm:ss' }}</td>
+       <td>{{this.custdata.premiumamout}}</td>
+       <!-- <td>14</td> -->
       
+    </tr>
        
        
-       
-  </tr>
+  </ng-container>
 
-
+   <!-- </tr> -->
 
 </table>
 
