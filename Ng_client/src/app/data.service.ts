@@ -58,6 +58,16 @@ export class DataService {
   {
     return this.http.get("http://localhost:8080/DacAug2019/user/userpolicydetails/"+Userid);
   }
+
+  GetCustPolicyDataByPremiumScheduleId(PremiumScheduleId:any)
+  {
+    return this.http.get("http://localhost:8080/DacAug2019/custpolicy/getcustpolicydetailsbypremiumschedule/"+PremiumScheduleId);
+  }
+
+  GetCustPolicyDataByCustPolicyId(CustPolicyId:any)
+  {
+    return this.http.get("http://localhost:8080/DacAug2019/custpolicy/getnextpremiumschedulebycustpolicyid/"+CustPolicyId);
+  }
   // GetUserByUserId(uname: any)
   // {
   //   return this.http.get("http://localhost:4000/editprofile/" + uname);
@@ -71,4 +81,16 @@ export class DataService {
   {
     return this.http.put("http://localhost:8080/DacAug2019/user/userdetails/" + UserData.userId, UserData);
   }
+
+  GetCustPolicyPremiumData(CustPolicyId:any)
+  {
+    return this.http.get("http://localhost:8080/DacAug2019/custpolicy/getnextpremiumschedule/"+CustPolicyId);
+  }
+
+  PayCustPolicyPremium(CustPolicyId:any)
+  {
+    return this.http.get("http://localhost:8080/DacAug2019/custpolicy/paynextpremiumschedule/"+CustPolicyId);
+  }
+
+
 }

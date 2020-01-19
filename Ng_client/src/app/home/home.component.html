@@ -23,8 +23,8 @@
 
 </tr>
    
-   <tr *ngFor="let custdata of CustPolicyData" routerLink="/PolicyDetails/{{this.custdata.policyid.policyid}}">
-       
+   <tr *ngFor="let custdata of CustPolicyData"  routerLink="/PolicyDetails/{{this.custdata.policyid.policyid}}">
+       <!-- <ng-container *ngFor="let psdata of PremiumScheduleData"> -->
        <td>{{this.custdata.policyid.policyid}}</td>
        <td>{{this.custdata.policyid.policyname}}</td>
        <td>{{this.custdata.policyid.policydescription}}</td>
@@ -33,10 +33,10 @@
        <td>{{this.custdata.premiumamout}}</td>
        <td>{{this.custdata.paidpremiumcount}}</td>
        <td>{{this.custdata.policyid.totalinsuranceamount}}</td>
-       <td>{{this.custdata.premiumschedule[0].premiumdate  |  date:'yyyy-MM-dd' }}</td>
+       <td>{{this.custdata.premiumschedule.premiumdate  |  date:'yyyy-MM-dd' }}</td>
        <td>{{this.custdata.ps}}</td>
-       <td><input type="button" class="btn btn-info" routerLink="/PayPremium/{{this.custdata.premiumschedule[0].premiumscheduleid}}" value="Pay Premium" /></td>
-       
+       <td><input type="button" class="btn btn-info" routerLink="/PayPremium/{{this.custdata.premiumschedule.premiumscheduleid}}" value="Pay Premium" /></td>
+      <!-- </ng-container> -->
        
   </tr>
 

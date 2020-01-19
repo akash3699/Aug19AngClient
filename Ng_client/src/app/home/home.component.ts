@@ -10,6 +10,7 @@ import { DataService } from '../data.service';
 export class HomeComponent implements OnInit {
 
   CustPolicyData:any
+  PremiumScheduleData:any
   constructor( public service: AuthService,private DataService:DataService) { }
 
 
@@ -24,10 +25,30 @@ export class HomeComponent implements OnInit {
     StatusOfSearch.subscribe((result:any)=>{
        console.log(result);
        this.CustPolicyData=result;
+
+       this.CustPolicyData.forEach(element => {
+        let StatusOfPremiumSearch = this.DataService.GetCustPolicyDataByCustPolicyId(element.cpid)
+      StatusOfPremiumSearch.subscribe((result:any)=>{
+        
+         console.log(result);
+        //  let id =element.cpid;
+        //  this.PremiumScheduleData.push(result);
+        element.premiumschedule=result
+        console.log(this.CustPolicyData)
+      },(error)=>{
+        console.log(error)
+      });
+  
+        
+      });
       
     },(error)=>{
       console.log(error)
     });
+
+    
+
+
   }
 
   }

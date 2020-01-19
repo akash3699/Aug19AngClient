@@ -1,22 +1,22 @@
 <h2 style="text-align:center">Pay Premium</h2>
 
-    <form action="editprofile.php" method="POST">
+    <form >
         <table style="align-content: center;margin-left:auto;margin-right:auto;" height="300px" width="400px" >
             
     
-            <tr>
+            <!-- <tr>
     
                 <td><b> Policy Name:</b></td>
                 <td>
-                    <input type="text" name="PolicyName" disabled value="Market Plus III" required="required">
+                    <input type="text" [(ngModel)]="PremiumSchedule.policyduration" name="PolicyName" disabled value="Market Plus III" required="required">
                 </td>
-            </tr>
+            </tr> -->
     
             <tr>
     
                 <td><b>Premium Amount</b></td>
                 <td>
-                    <input type="number" value="98967" disabled name="premiumAmount" required="required">
+                    <input type="number" [(ngModel)]="PolicyData.premiumamout" disabled name="premiumamout" required="required">
                 </td>
             </tr>
 
@@ -24,13 +24,13 @@
     
               <td><b>Premium Date</b></td>
               <td>
-                  <input type="date"  disabled name="premiumAmount" required="required">
+                  {{PremiumSchedule.premiumdate |  date:'yyyy-MM-dd'}}
               </td>
           </tr>
     
             <tr>
                 <td colspan="2" style="text-align:center">
-                    <input type="submit" name="paybtn" class="btn btn-info" value="Pay Premium">
+                    <input type="submit" (click)="PayPremiumNow()" name="paybtn" class="btn btn-info" value="Pay Premium">
     
                            
                 </td>

@@ -1,0 +1,18 @@
+totalinsuranceamount 124556
+policyduration 10 
+premium frequency ps Yearly 1
+premium frequency ps monthly 12
+premium frequency ps Weekly 7
+
+
+totalpremiumcount = policyduration/365 // yearly
+premiumamout = totalinsuranceamount/totalpremiumcount
+
+totalpremiumcount = policyduration/30 // monthly
+premiumamout = totalinsuranceamount/totalpremiumcount
+
+totalpremiumcount = policyduration/7 // weekly
+premiumamout = totalinsuranceamount/totalpremiumcount
+
+
+
