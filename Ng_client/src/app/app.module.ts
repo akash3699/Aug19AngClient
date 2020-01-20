@@ -30,6 +30,8 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
 import { AdminCustomerPolicyDetailsComponent } from './admin-customer-policy-details/admin-customer-policy-details.component';
 import { AdminService } from './admin.service';
 import { AdminPolicyDetailsComponent } from './admin-policy-details/admin-policy-details.component';
+import { ClaimTrackerComponent } from './claim-tracker/claim-tracker.component';
+import { AdminAddClaimTrackerComponent } from './admin-add-claim-tracker/admin-add-claim-tracker.component';
 
 
 @NgModule({
@@ -54,7 +56,9 @@ import { AdminPolicyDetailsComponent } from './admin-policy-details/admin-policy
     HistoryofPaidPremiumComponent,
     ForgotPasswordComponent,
     AdminCustomerPolicyDetailsComponent,
-    AdminPolicyDetailsComponent
+    AdminPolicyDetailsComponent,
+    ClaimTrackerComponent,
+    AdminAddClaimTrackerComponent
   ],
   imports: [
     BrowserModule,
@@ -68,10 +72,12 @@ import { AdminPolicyDetailsComponent } from './admin-policy-details/admin-policy
       {path : "AddPolicy" , component : AddPolicyComponent, canActivate: [AuthService]},
       {path : "MyProfile" , component : MyProfileComponent, canActivate: [AuthService]},
       {path : "Admin/AddPolicy" , component : AdminAddPolicyComponent, canActivate: [AuthService]},
+      {path : "Admin/AddClaimTracker" , component : AdminAddClaimTrackerComponent, canActivate: [AuthService]},
       {path : "Admin/ManagePolicy/:policyid" , component : AdminManagePolicyComponent, canActivate: [AuthService]},
       {path : "Admin/CustomerPolicyDetails" , component : AdminCustomerPolicyDetailsComponent, canActivate: [AuthService]},
       {path : "Admin" , component : AdminPolicyDetailsComponent, canActivate: [AuthService]},
       {path : "ChangePassword" , component : ChangePasswordComponent, canActivate: [AuthService]},
+      {path : "ClaimTracker" , component : ClaimTrackerComponent, canActivate: [AuthService]},
       {path : "PremiumCalculator/:policyId" , component : PremiumCalulatorComponent, canActivate: [AuthService]},
       {path : "PayPremium/:premiumscheduleid" , component : PayPremiumComponent, canActivate: [AuthService]},
       {path : "HistoryofPaidPremium" , component : HistoryofPaidPremiumComponent, canActivate: [AuthService]},

@@ -20,12 +20,13 @@
    <!-- <tr *ngFor="let psdata of this.CustPolicyData.premiumschedule.historyofpaidpremium"> -->
    <ng-container *ngFor="let custdata of CustPolicyData;let i=index">
     <tr  *ngFor="let psdata of custdata.premiumschedule">
+       <ng-container *ngIf="psdata.historyofpaidpremium.paiddate">
        <td>{{this.custdata.policyid.policyid}}</td>
        <td>{{this.custdata.policyid.policyname}}</td>
        <td>{{psdata.historyofpaidpremium.paiddate | date:'yyyy-MM-dd HH:mm:ss' }}</td>
        <td>{{this.custdata.premiumamout}}</td>
        <!-- <td>14</td> -->
-      
+      </ng-container>
     </tr>
        
        

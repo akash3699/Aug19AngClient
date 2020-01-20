@@ -10,15 +10,15 @@
 
 
     <label for="fname">Fisrt Name</label><label for="lname" style="margin: 5px 200px;">Last Name</label><br>
-    <input [(ngModel)]="UserData.fname"  style=" margin: 5px 0px;" type="text" class="form-control" id="fname"
+    <input [(ngModel)]="UserData.fname" placeholder="Enter First Name"  style=" margin: 5px 0px;" type="text" class="form-control" id="fname"
       name="fname">
-    <input [(ngModel)]="UserData.lname" type="text" class="form-control" id="lname" name="lname"><br>
+    <input [(ngModel)]="UserData.lname" type="text" placeholder="Enter Last Name" class="form-control" id="lname" name="lname"><br>
 
     
 
     <label for="mobile">Phone Number</label><label for="dob" style="margin: 5px 200px;">Date of Birth: {{this.dob |  date:'yyyy-MM-dd'}}</label><br>
 
-    <input [(ngModel)]="UserData.mobile" style=" margin: 5px 0px;" type="text" class="form-control" id="mobile"
+    <input [(ngModel)]="UserData.mobile" style=" margin: 5px 0px;" placeholder="Enter Mobile No"  type="text" class="form-control" id="mobile"
       name="mobile">
       
     <input [(ngModel)]="UserData.dob"  type="date" class="form-control" id="dob" name="dob"><br>

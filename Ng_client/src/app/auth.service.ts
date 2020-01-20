@@ -14,6 +14,17 @@ export class AuthService implements CanActivate {
     return (sessionStorage.getItem("isLoggedIn") == "1");
   }
 
+  isAdmin()
+  {
+    if(sessionStorage.getItem("roleID")=='0')
+    {
+      return true
+    }
+    else{
+      return false
+    }
+  }
+
   canActivate(route: ActivatedRouteSnapshot,
               state: RouterStateSnapshot)
   {
@@ -48,6 +59,16 @@ export class AuthService implements CanActivate {
       sessionStorage.setItem("userdata", JSON.stringify(result_data));
       console.log(result_data.roleID)
       this.UserData = result_data;
+
+      if(result_data.roleID==0)
+      {
+        this.router.navigate(['Admin']);
+      }
+      else
+      {
+        this.router.navigate(['Home']);
+      }
+
 
       return true;
     // }

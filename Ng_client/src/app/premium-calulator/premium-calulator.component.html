@@ -15,8 +15,9 @@
             <tr>
                 <td><b>Payment Frequency:</b></td>
                <td>
-               <select name="ps" [(ngModel)]="PolicyData.ps" id="ps" class="form-control">
-                 <option value="YEARLY">Yearly</option>
+               <select style="background-color: aliceblue;" name="ps" [(ngModel)]="PolicyData.ps" placeholder="Select Premium Frequency" required id="ps" class="form-control">
+                    <!-- <option value="" style="color:black;" disabled selected hidden>Select your option</option>  -->
+                <option value="YEARLY" >Yearly</option>
                  <option value="MONTHLY">Monthly</option>
                  <option value="WEEKLY">Weekly</option>
                </select>
@@ -38,7 +39,7 @@
     
                 <td><b>Premium Amount:</b></td>
                 <td>
-                    <input type="number" [(ngModel)]="PolicyData.premiumamout" disabled name="premiumamout" required="required">
+                    <input type="number" [(ngModel)]="PolicyData.premiumamout" placeholder="Premium Amount" disabled name="premiumamout" required>
                 </td>
             </tr>
 
@@ -46,7 +47,7 @@
     
                 <td><b>Premium Count:</b></td>
                 <td>
-                    <input type="number" [(ngModel)]="PolicyData.totalpremiumcount" disabled name="totalpremiumcount" required="required">
+                    <input type="number" [(ngModel)]="PolicyData.totalpremiumcount" placeholder="Total Premium Count" disabled name="totalpremiumcount" required>
                 </td>
             </tr>
 
@@ -59,6 +60,6 @@
                 </td>
             </tr>
         </table>
-
+        {{msg}}
       </div>
     </form>

@@ -1,66 +1,118 @@
-<nav class="navbar navbar-default" role="navigation">
-  <div class="navbar-header">
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-      <span class="sr-only">Toggle navigation</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
-    <a class="navbar-brand" routerLink="/Home">Online Policy Management System</a>
-  </div>
-
-  <div class="collapse navbar-collapse navbar-ex1-collapse">
-    <ul class="nav navbar-nav">
-      <li class="active">
-        <a routerLink="/Home">Home</a>
-      </li>
-      <li class="active">
-        <a routerLink="/AboutUs">About Us</a>
-      </li>
-      <li class="active">
-        <a routerLink="/ContactUs">Contact Us</a>
-      </li>
-    </ul>
-    <!-- <form class="navbar-form navbar-left" role="search">
-      <div class="form-group">
-        <input type="text" class="form-control" placeholder="Search Policy">
-      </div>
-      <button type="submit" class="btn btn-default">Submit</button>
-    </form> -->
-    <ul class="nav navbar-nav navbar-right">
-      <li class="active" *ngIf="!service.isLoggedIn()">
-        <a routerLink="/Login">Login</a>
-      </li>
-      <li class="active" *ngIf="service.isLoggedIn()">
-        <a routerLink="/Profile">Profile</a>
-      </li>
-      <li class="active" *ngIf="service.isLoggedIn()">
-        <a href="#" (click)="Logout()">Logout</a>
-      </li>
-      <li class="active" *ngIf="!service.isLoggedIn()">
-        <a routerLink="/SignUp">SignUp</a>
-      </li>
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Menu <b class="caret"></b></a>
-        <ul class="dropdown-menu">
-          <li><a routerLink="Home">DashBoard</a></li>
-          <li><a routerLink="Profile">My Profile</a></li>
-          <li><a routerLink="HistoryofPaidPremium">History of Paid Premium</a></li>
-          <li><a routerLink="ChangePassword">Change Password</a></li>
-          <li><a routerLink="ClaimTracker">Claim Tracker</a></li>
-          <li><a routerLink="#">Logout</a></li>
-        </ul>
-      </li>
-    </ul>
-  </div>
-</nav>
-<router-outlet></router-outlet>
-
-
-<div class="footer bg-dark">
-  <div class="footer-copyright text-center py-2" style="margin-top: 10px;">
-      ©2020 Copyright
-      <a routerLink="/Home" style="color: white; " >Online Policy Management System</a>
-    </div>
-    
-  </div>
+<div class="container1">
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" routerLink="/Home">Online Policy Management System</a>
+        </div>
+      
+        <div class="collapse navbar-collapse navbar-ex1-collapse" *ngIf="!service.isAdmin()" >
+          <ul class="nav navbar-nav">
+            <li class="active">
+              <a routerLink="/Home">Home</a>
+            </li>
+            <li class="active">
+              <a routerLink="/AboutUs">About Us</a>
+            </li>
+            <li class="active">
+              <a routerLink="/ContactUs">Contact Us</a>
+            </li>
+          </ul>
+          <!-- <form class="navbar-form navbar-left" role="search">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Search Policy">
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+          </form> -->
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active" *ngIf="!service.isLoggedIn()">
+              <a routerLink="/Login">Login</a>
+            </li>
+            <li class="active" *ngIf="service.isLoggedIn()">
+              <a routerLink="/Profile">Profile</a>
+            </li>
+            <li class="active" *ngIf="service.isLoggedIn()">
+              <a href="#" (click)="Logout()">Logout</a>
+            </li>
+            <li class="active" *ngIf="!service.isLoggedIn()">
+              <a routerLink="/SignUp">SignUp</a>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Menu <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a routerLink="Home" *ngIf="service.isLoggedIn()">DashBoard</a></li>
+                <li><a routerLink="Profile" *ngIf="service.isLoggedIn()">My Profile</a></li>
+                <li><a routerLink="HistoryofPaidPremium" *ngIf="service.isLoggedIn()">History of Paid Premium</a></li>
+                <li><a routerLink="ChangePassword" *ngIf="service.isLoggedIn()">Change Password</a></li>
+                <li><a routerLink="ClaimTracker" *ngIf="service.isLoggedIn()">Claim Tracker</a></li>
+                <li><a (click)="Logout()" *ngIf="service.isLoggedIn()">Logout</a></li>
+                <li><a routerLink="Login" *ngIf="!service.isLoggedIn()">Login</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      
+        <div class="collapse navbar-collapse navbar-ex1-collapse" *ngIf="service.isAdmin()" >
+            <ul class="nav navbar-nav">
+              <li class="active">
+                <a routerLink="/Admin">Home</a>
+              </li>
+              <li class="active">
+                <a routerLink="/AboutUs">About Us</a>
+              </li>
+              <li class="active">
+                <a routerLink="/ContactUs">Contact Us</a>
+              </li>
+            </ul>
+            <!-- <form class="navbar-form navbar-left" role="search">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Search Policy">
+              </div>
+              <button type="submit" class="btn btn-default">Submit</button>
+            </form> -->
+            <ul class="nav navbar-nav navbar-right">
+              <li class="active" *ngIf="!service.isLoggedIn()">
+                <a routerLink="/Login">Login</a>
+              </li>
+              <!-- <li class="active" *ngIf="service.isLoggedIn()">
+                <a routerLink="/Profile">Profile</a>
+              </li> -->
+              <li class="active" *ngIf="service.isLoggedIn()">
+                <a href="#" (click)="Logout()">Logout</a>
+              </li>
+              <!-- <li class="active" *ngIf="!service.isLoggedIn()">
+                <a routerLink="/SignUp">SignUp</a>
+              </li> -->
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Menu <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a routerLink="/Admin/CustomerPolicyDetails" *ngIf="service.isLoggedIn()">DashBoard</a></li>
+                  <li><a routerLink="/Admin/AddPolicy" *ngIf="service.isLoggedIn()">Add Policy</a></li>
+                  <li><a routerLink="/Admin/AddClaimTracker" *ngIf="service.isLoggedIn()">Add Claim Tracker</a></li>
+                  <!-- <li><a routerLink="Profile">My Profile</a></li> -->
+                  <!-- <li><a routerLink="HistoryofPaidPremium">History of Paid Premium</a></li> -->
+                  <li><a routerLink="/ChangePassword" *ngIf="service.isLoggedIn()">Change Password</a></li>
+                  <!-- <li><a routerLink="ClaimTracker">Claim Tracker</a></li> -->
+                  <li><a (click)="Logout()" *ngIf="service.isLoggedIn()">Logout</a></li>
+                  <li><a routerLink="Login" *ngIf="!service.isLoggedIn()">Login</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+      </nav>
+      <router-outlet></router-outlet>
+      
+      
+      <div class="footer bg-dark">
+        <div class="footer-copyright text-center py-2" style="margin-top: 10px;">
+            ©2020 Copyright
+            <a routerLink="/Home" style="color: white; " >Online Policy Management System</a>
+          </div>
+          
+        </div>
+      
+</div>

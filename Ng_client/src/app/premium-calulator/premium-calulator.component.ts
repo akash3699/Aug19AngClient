@@ -35,7 +35,15 @@ constructor(private route: ActivatedRoute,private DataService:DataService,privat
 
   CalculatePremium(){
     let daysofyears:number=this.PolicyData.policyduration*365
-    if(this.PolicyData.ps=="YEARLY")
+    if(this.PolicyData.ps=="" || this.PolicyData.ps==null || this.PolicyData.ps==undefined )
+    {
+      
+      this.msg="Payment Frequency is required"
+    } 
+    else
+    {
+      this.msg=""
+      if(this.PolicyData.ps=="YEARLY")
     {
       this.PolicyData.totalpremiumcount = daysofyears/365
 
@@ -53,12 +61,21 @@ constructor(private route: ActivatedRoute,private DataService:DataService,privat
         }
       }
 
-    } 
+    }
+    }
     this.PolicyData.premiumamout = this.PolicyData.totalinsuranceamount/this.PolicyData.totalpremiumcount
     
   }
   BuyPolicy(){
-    this.PolicyData.userid= sessionStorage.userid;
+    if(this.PolicyData.userid=="" || this.PolicyData.userid==undefined ||
+    this.PolicyData.policyid=="" || this.PolicyData.policyid==undefined )
+    {
+
+      this.msg="All Fields Are Required to Proceed"
+    }
+    else{
+      this.msg=""
+      this.PolicyData.userid= sessionStorage.userid;
     this.PolicyData.policyid=this.param1;
     let StatusOfUpdate = this.DataService.BuyPolicy(this.PolicyData)
     StatusOfUpdate.subscribe((result:any)=>{
@@ -69,6 +86,7 @@ constructor(private route: ActivatedRoute,private DataService:DataService,privat
     },(error)=>{
       console.log(error)
     });
+    }
 
   }
 

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AuthService } from './auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -8,10 +9,13 @@ import { AuthService } from './auth.service';
 })
 export class AppComponent {
 
-  constructor( public service: AuthService) { }
+  constructor( public service: AuthService, private router:Router) { }
 
   ngOnInit() {
+    
   }
+
+  
 
   Logout()
   {

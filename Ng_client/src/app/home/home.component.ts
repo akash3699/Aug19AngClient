@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { DataService } from '../data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -11,7 +12,17 @@ export class HomeComponent implements OnInit {
 
   CustPolicyData:any
   PremiumScheduleData:any
-  constructor( public service: AuthService,private DataService:DataService) { }
+  constructor( public service: AuthService,private DataService:DataService,private router:Router) { 
+    if(this.service.isAdmin())
+    {
+      this.router.navigate(['Admin']);
+
+    }
+    else
+    {
+      this.router.navigate(['Home']);
+    }
+  }
 
 
   GetCustPolicyData()

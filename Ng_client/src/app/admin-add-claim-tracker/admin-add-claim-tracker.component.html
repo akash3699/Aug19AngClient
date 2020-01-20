@@ -6,37 +6,34 @@
     
             <tr>
     
-                <td><b> Policy Name:</b></td>
+                <td><b> UserId</b></td>
                 <td>
-                    <input ngModel type="text" placeholder="Enter Policy Name" name="policyname" required="required">
+                    <input ngModel type="number" placeholder="Enter UserId" name="userId" required>
                 </td>
             </tr>
     
             <tr>
     
-                <td><b>Benefits:</b></td>
+                <td><b>Remarks:</b></td>
                 <td>
                     
-                    <textarea ngModel name="policydescription" placeholder="Enter Policy Description" id="policydescription" cols="30" rows="5"></textarea>
+                    <textarea ngModel name="remarks" placeholder="Enter Remark for Claim" id="remarks" cols="30" rows="5"></textarea>
                 </td>
             </tr>
 
             <tr>
     
-                <td><b>Years:</b></td>
+                <td><b>Claim Status:</b></td>
                 <td>
-                    <input ngModel type="Number" placeholder="Enter Policy Duration" name="policyduration" required="required">
+                  <select style="background-color: aliceblue;" ngModel name="claimstatus"  placeholder="Select Claim Status" required id="claimstatus" class="form-control">
+                    <!-- <option value="" style="color:black;" disabled selected hidden>Select your option</option>  -->
+                <option value="APPROVED" >APPROVED</option>
+                 <option value="PROCESSING">PROCESSING</option>
+                 <option value="REJECTED">REJECTED</option>
+               </select>
                 </td>
             </tr>
 
-            <tr>
-    
-                <td><b>Amount for Insurance:</b></td>
-                <td>
-                    <input ngModel type="Number" placeholder="Total Insurance Amount " name="totalinsuranceamount" required="required">
-                </td>
-            </tr>
-    
             <tr>
                 <td colspan="2" style="text-align:center">
                     <input type="submit" name="addpolicytbtn" class="btn btn-info" value="Add Policy">

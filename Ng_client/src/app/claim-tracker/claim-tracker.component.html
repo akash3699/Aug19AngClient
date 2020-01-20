@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+  <h1 style="text-align: center;">Online Policy Management System</h1>
+
+  
+<marquee>New updates:Insurance Policy</marquee>       
+<button type="button" routerLink="/" class="btn btn-info">DashBoard</button><br>
+<table class="table">
+<tr>
+<th>Claim ID</th>
+<th>Claim Status</th>
+<th>Claim remarks</th>
+<!-- <th>Premium Amount</th> -->
+<!-- <th>Total Premium Count </th> -->
+<th></th>
+
+</tr>
+   <!-- <tr *ngFor="let psdata of this.CustPolicyData.premiumschedule.historyofpaidpremium"> -->
+   
+    <tr  *ngFor="let ctdata of this.ClaimTrackerData">
+     
+       <td>{{ctdata.ctid}}</td>
+       <td>{{ctdata.claimstatus}}</td>
+       <td>{{ctdata.remarks}}</td>
+       <!-- <td>{{psdata.historyofpaidpremium.paiddate | date:'yyyy-MM-dd HH:mm:ss' }}</td> -->
+       <!-- <td>{{this.custdata.premiumamout}}</td> -->
+       <!-- <td>14</td> -->
+  
+    </tr>
+       
+       
+  
+
+   <!-- </tr> -->
+
+</table>
+
+
+
+</body>
+
+</html>

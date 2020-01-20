@@ -45,7 +45,8 @@ export class AdminAddPolicyComponent implements OnInit {
       resultstate.subscribe((data: any) => {
         // if (data.error == null) {
           this.msg = "Successfully Added Up!!";
-         
+          window.alert(this.msg)
+          this.router.navigate(['Admin']);
         // }
         // else {
         //   // console.log(data);
