@@ -1,23 +1,17 @@
-<h2 style="text-align:center">Add Claim Tracker</h2>
+<h2 style="text-align:center">Update Claim Tracker</h2>
 
-    <form #myForm="ngForm" (ngSubmit)="FormValidation(myForm)">
+    <form >
         <table style="align-content: center;margin-left:auto;margin-right:auto;" height="300px" width="400px" >
             
     
-            <tr>
-    
-                <td><b> UserId</b></td>
-                <td>
-                    <input ngModel type="number" placeholder="Enter UserId" name="userId" required>
-                </td>
-            </tr>
+            
     
             <tr>
     
                 <td><b>Remarks:</b></td>
                 <td>
                     
-                    <textarea ngModel name="remarks" placeholder="Enter Remark for Claim" id="remarks" cols="30" rows="5"></textarea>
+                    <textarea [(ngModel)]="ClaimTrackerData.remarks" name="remarks" placeholder="Enter Remark for Claim" id="remarks" cols="30" rows="5"></textarea>
                 </td>~
             </tr>
 
@@ -25,7 +19,7 @@
     
                 <td><b>Claim Status:</b></td>
                 <td>
-                  <select style="background-color: aliceblue;" ngModel name="claimstatus"  placeholder="Select Claim Status" required id="claimstatus" class="form-control">
+                  <select style="background-color: aliceblue;" [(ngModel)]="ClaimTrackerData.claimstatus" name="claimstatus"  placeholder="Select Claim Status" required id="claimstatus" class="form-control">
                     <!-- <option value="" style="color:black;" disabled selected hidden>Select your option</option>  -->
                 <option value="APPROVED" >APPROVED</option>
                  <option value="PROCESSING">PROCESSING</option>
@@ -36,7 +30,7 @@
 
             <tr>
                 <td colspan="2" style="text-align:center">
-                    <input type="submit" name="addpolicytbtn" class="btn btn-info" value="Add Claim Tracker">
+                    <input type="button" (click)="UpdateClaimTracker()" name="addpolicytbtn" class="btn btn-info" value="Update Claim Tracker">
                     <label style="position: absolute; left: 150px; "><b>{{msg}}</b></label>
                            
                 </td>

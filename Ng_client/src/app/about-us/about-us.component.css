@@ -33,8 +33,13 @@ button:hover {
 }
 
 .cancelbtn {
-  width: 100px;
-  padding: 10px 20px;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 285px;
   background-color: #f44336;
 }
 
@@ -72,14 +77,25 @@ span.psw {
 .box {
   position: absolute;
   text-align: center;
-  top: 55%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  height: 610px;
-  width: 300px;
+  height: 500px;
+  width: 400px;
   padding: 40px;
   padding-top: 25px;
   box-sizing: border-box;
   box-shadow: 0 15px 25px rgb(23, 25, 26);
   border-radius: 10px;
+  margin-top: 70px;
+}
+
+.copyright
+{
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  color:black;
+  padding: 1.4em;
+  text-align: center;
 }

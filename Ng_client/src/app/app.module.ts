@@ -32,6 +32,8 @@ import { AdminService } from './admin.service';
 import { AdminPolicyDetailsComponent } from './admin-policy-details/admin-policy-details.component';
 import { ClaimTrackerComponent } from './claim-tracker/claim-tracker.component';
 import { AdminAddClaimTrackerComponent } from './admin-add-claim-tracker/admin-add-claim-tracker.component';
+import { AdminAllClaimTrackersComponent } from './admin-all-claim-trackers/admin-all-claim-trackers.component';
+import { AdminEditClaimTrackersComponent } from './admin-edit-claim-trackers/admin-edit-claim-trackers.component';
 
 
 @NgModule({
@@ -58,7 +60,9 @@ import { AdminAddClaimTrackerComponent } from './admin-add-claim-tracker/admin-a
     AdminCustomerPolicyDetailsComponent,
     AdminPolicyDetailsComponent,
     ClaimTrackerComponent,
-    AdminAddClaimTrackerComponent
+    AdminAddClaimTrackerComponent,
+    AdminAllClaimTrackersComponent,
+    AdminEditClaimTrackersComponent
   ],
   imports: [
     BrowserModule,
@@ -73,6 +77,8 @@ import { AdminAddClaimTrackerComponent } from './admin-add-claim-tracker/admin-a
       {path : "MyProfile" , component : MyProfileComponent, canActivate: [AuthService]},
       {path : "Admin/AddPolicy" , component : AdminAddPolicyComponent, canActivate: [AuthService]},
       {path : "Admin/AddClaimTracker" , component : AdminAddClaimTrackerComponent, canActivate: [AuthService]},
+      {path : "Admin/EditClaimTracker/:claimtrackerid" , component : AdminEditClaimTrackersComponent, canActivate: [AuthService]},
+      {path : "Admin/AllClaimTrackers" , component : AdminAllClaimTrackersComponent, canActivate: [AuthService]},
       {path : "Admin/ManagePolicy/:policyid" , component : AdminManagePolicyComponent, canActivate: [AuthService]},
       {path : "Admin/CustomerPolicyDetails" , component : AdminCustomerPolicyDetailsComponent, canActivate: [AuthService]},
       {path : "Admin" , component : AdminPolicyDetailsComponent, canActivate: [AuthService]},

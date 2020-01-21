@@ -35,9 +35,10 @@
        <td>{{this.custdata.policyid.totalinsuranceamount}}</td>
        <td>{{this.custdata.premiumschedule.premiumdate  |  date:'yyyy-MM-dd' }}</td>
        <td>{{this.custdata.ps}}</td>
-       <td><input type="button" class="btn btn-info" routerLink="/PayPremium/{{this.custdata.premiumschedule.premiumscheduleid}}" value="Pay Premium" /></td>
+       <td *ngIf="this.custdata.premiumschedule.premiumdate" ><input type="button" class="btn btn-info" routerLink="/PayPremium/{{this.custdata.premiumschedule.premiumscheduleid}}" value="Pay Premium" /></td>
+       <td *ngIf="!this.custdata.premiumschedule.premiumdate" >All Premiums are Paid</td>
       <!-- </ng-container> -->
-       
+      <!-- *ngIf="this.custdata.premiumschedule.premiumdate" -->
   </tr>
 
 

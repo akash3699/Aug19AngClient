@@ -30,7 +30,7 @@ export class AdminAddClaimTrackerComponent implements OnInit {
         // if (data.error == null) {
           this.msg = "Successfully Added Up!!"+data;
           window.alert(this.msg)
-          this.router.navigate(['Admin']);
+          this.router.navigate(['/Admin/AllClaimTrackers']);
         // }
         // else {
         //   // console.log(data);

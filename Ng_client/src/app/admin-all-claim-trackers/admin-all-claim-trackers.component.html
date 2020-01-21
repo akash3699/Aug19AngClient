@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+  <h1 style="text-align: center;">Online Insurance Management System</h1>
+
+  
+<marquee>New updates:Insurance Policy</marquee>       
+<button type="button" routerLink="/Admin/AddClaimTracker" class="btn btn-info">Add New Tracker</button><br>
+<table class="table">
+<tr>
+<th>Claim Tracker ID</th>
+<th>Claim Status</th>
+<th>Claim Remarks</th>
+<th></th>
+
+</tr>
+   
+   <tr *ngFor="let ClaimTracker of AllClaimTrackers"  routerLink="/Admin/EditClaimTracker/{{this.ClaimTracker.ctid}}">
+       
+       <td>{{this.ClaimTracker.ctid}}</td>
+       <td>{{this.ClaimTracker.claimstatus}}</td>
+       <td>{{this.ClaimTracker.remarks}}</td>
+       
+       <td><input type="button" class="btn btn-info" routerLink="/Admin/EditClaimTracker/{{this.ClaimTracker.ctid}}" value="Update Claim Details" /></td>
+       
+      
+  </tr>
+
+
+
+</table>
+
+
+  
+
+</body>
+
+</html>

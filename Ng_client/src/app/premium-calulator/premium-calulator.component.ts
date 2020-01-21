@@ -67,9 +67,11 @@ constructor(private route: ActivatedRoute,private DataService:DataService,privat
     
   }
   BuyPolicy(){
-    if(this.PolicyData.userid=="" || this.PolicyData.userid==undefined ||
+    if(this.PolicyData.premiumamout=="" || this.PolicyData.premiumamout==undefined ||
     this.PolicyData.policyid=="" || this.PolicyData.policyid==undefined )
     {
+      console.log(this.PolicyData);
+      
 
       this.msg="All Fields Are Required to Proceed"
     }

@@ -104,9 +104,24 @@ export class DataService {
     return this.http.get(this.serverurl+"user/userclaimtrackerdetails/"+Userid);
   }
 
+  GetClaimTrackerByCTId(CTid:number)
+  {
+    return this.http.get(this.serverurl+"user/userclaimtrackerdetailsbyid/"+CTid);
+  }
+
   AddClaimTrackerById(Userid:number,ClaimTrackerData:any)
   {
     return this.http.post(this.serverurl+"user/userclaimtrackerdetails/"+ClaimTrackerData.userId,ClaimTrackerData);
+  }
+
+  UpdateClaimTrackerById(ClaimTrackerId:number,ClaimTrackerData:any)
+  {
+    return this.http.post(this.serverurl+"user/userclaimtrackerdetailsbyid/"+ClaimTrackerData.ctid,ClaimTrackerData);
+  }
+
+  GetAllClaimTrackers()
+  {
+    return this.http.get(this.serverurl+"user/userallclaimtrackerdetails");
   }
 
 }
