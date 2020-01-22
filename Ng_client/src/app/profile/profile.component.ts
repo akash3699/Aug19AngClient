@@ -30,8 +30,6 @@ export class ProfileComponent implements OnInit {
         this.UserProfileData = result;
       
     });
-    
-    
   }
   
 }

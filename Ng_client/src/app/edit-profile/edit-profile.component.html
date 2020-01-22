@@ -1,41 +1,47 @@
-<div class="box">
-  <div class="container" style="text-align: left">
-    <h1><b>Edit Profile</b></h1>
-
-    <label for="userId">UserId</label><label for="email" style="margin: 5px 235px;">Email Address</label><br>
-
-    <input [(ngModel)]="UserData.userId" readonly style=" margin: 5px 0px;" type="text" class="form-control" id="userId"
-      name="userId">
-    <input [(ngModel)]="UserData.email" readonly type="text" class="form-control" id="email" name="email"><br>
-
-
-    <label for="fname">Fisrt Name</label><label for="lname" style="margin: 5px 200px;">Last Name</label><br>
-    <input [(ngModel)]="UserData.fname" placeholder="Enter First Name"  style=" margin: 5px 0px;" type="text" class="form-control" id="fname"
-      name="fname">
-    <input [(ngModel)]="UserData.lname" type="text" placeholder="Enter Last Name" class="form-control" id="lname" name="lname"><br>
-
-    
-
-    <label for="mobile">Phone Number</label><label for="dob" style="margin: 5px 200px;">Date of Birth: {{this.dob |  date:'yyyy-MM-dd'}}</label><br>
-
-    <input [(ngModel)]="UserData.mobile" style=" margin: 5px 0px;" placeholder="Enter Mobile No"  type="text" class="form-control" id="mobile"
-      name="mobile">
-      
-    <input [(ngModel)]="UserData.dob"  type="date" class="form-control" id="dob" name="dob"><br>
-
-    <label for="gender">Gender</label><br>
-    <select class="select" [(ngModel)]="UserData.gender" name="gender">
-      <option [value]="MALE">MALE</option>
-      <option [value]="FEMALE">FEMALE</option>
-      <option [value]="OTHER">OTHER</option>
-    </select><br>
-
-    <button type="button" (click)="UpdateUserData()" class="btn btn-primary">Update</button><br>
-    <button type="button" routerLink="/Profile" class="cancelbtn">Cancel</button>
-
-    <span>
-      {{msg}}
-    </span>
-  </div>
+<div class="container">
+  <h1><b>Edit Profile</b></h1>
+  <label for="userId">UserId</label>
+  <input [(ngModel)]="UserData.userId" readonly type="text" class="form-control" id="userId" name="userId">
+  <label for="email">Email Address</label>
+  <input [(ngModel)]="UserData.email" readonly type="text" class="form-control" id="email" name="email">
+  <label for="fname">Fisrt Name</label>
+  <input [(ngModel)]="UserData.fname" placeholder="Enter First Name" type="text" class="form-control" id="fname"
+    name="fname">
+  <label for="lname">Last Name</label>
+  <input [(ngModel)]="UserData.lname" type="text" placeholder="Enter Last Name" class="form-control" id="lname"
+    name="lname">
+  <label for="mobile">Phone Number</label>
+  <input [(ngModel)]="UserData.mobile" style=" margin: 5px 0px;" placeholder="Enter Mobile No" type="text"
+    class="form-control" id="mobile" name="mobile">
+  <label for="dob">Date of Birth: {{this.dob |  date:'yyyy-MM-dd'}}</label>
+  <input [(ngModel)]="UserData.dob" type="date" class="form-control" id="dob" name="dob">
+  <label for="gender">Gender</label>
+  <select id="inputState" class="form-control" [(ngModel)]="UserData.gender" name="gender">
+    <option selected>Choose...</option>
+    <option [value]="MALE">MALE</option>
+    <option [value]="FEMALE">FEMALE</option>
+    <option [value]="OTHER">OTHER</option>
+  </select>
+  <button type="button" (click)="UpdateUserData()" class="btn btn-primary mt-4">Update</button>
+  <button type="button" routerLink="/Profile" class="btn btn-danger mt-4 ml-5">Cancel</button>
+  <span>
+    {{msg}}
+  </span>
 </div>
-<!-- <div class="copyright">All Rights Reserved. Copyright © Online Insurance Management System FoodWorks Ltd.</div> -->
+
+
+<!-- <div class="container">
+  <form>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputEmail4">Email</label>
+        <input type="email" class="form-control" id="inputEmail4">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputPassword4">Password</label>
+        <input type="password" class="form-control" id="inputPassword4">
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Sign in</button>
+  </form>
+</div> -->

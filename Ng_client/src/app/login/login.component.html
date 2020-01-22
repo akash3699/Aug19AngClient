@@ -1,28 +1,32 @@
-<!-- <div style="width: 30%;">
-<img src="./assets/insurance.jpeg" class="img-responsive" alt="DecoratorImg">
-</div> -->
-<form role="form" #myForm="ngForm" (ngSubmit)="FormValidation(myForm.value)">
-<div class="box" >
-  <div class="background">
-      <!-- <img src="./assets/pizza_icon.png" style="height: 30%; width: 15%;" alt="Online Insurance Management System_Icon" class="Icon"> -->
-  </div>
-  <h2 style="color: rgb(124, 8, 8);"><b>Welcome<br> to<br> Online Insurance Management System</b></h2>
-  <div class="container" style="text-align: left">
-      <label for="uname"><b>Email</b></label><br>
-      <input ngModel type="text" placeholder="Enter Email" name="email">
-      <br>
-      <label for="pwd"><b>Password</b></label><br>
-      <input ngModel type="password" placeholder="Enter Password" name="passwd">
-      <br>
-      <button type="submit" style=" background-color:darkcyan;">Login</button><br>
-      <!-- <label>
-          <input type="checkbox" checked="checked" name="remember"> Remember me
-      </label><br> -->
-      <button type="button" routerLink="/SignUp" style="background-color: aquamarine;" class="cancelbtn">Sign Up</button><br>
-      <button type="button" routerLink="/ForgotPassword" style="background-color: blueviolet;" class="frgtpwdbtn">Forgot Password</button><br>
-      <b style="position: absolute; left: 83px;">{{msg}}</b>
-  </div>
+
+<div class="container">
+    <form role="form" #myForm="ngForm" (ngSubmit)="FormValidation(myForm.value)">
+        <div class="form-group">
+            <label for="inputEmail4">Email</label>
+            <input type="text" ngModel name="email" pattern="[[a-zA-Z0-9_\-\.]+@([a-zA-Z0-9_\-\.]+)\.[a-zA-Z]{2,5}]*"
+                #Vemail="ngModel" class="form-control" [class.alert-danger]=" Vemail.touched   && Vemail.invalid"
+                id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" required>
+            <div *ngIf="Vemail.touched && Vemail.invalid" style="width:20px;height: 20px;"
+                class="spinner-border text-danger" role="status">
+                <span class="sr-only">...</span>
+            </div>
+                 <div class="alert-danger" *ngIf="Vemail.touched && Vemail.invalid" style="width:50%;">Email is not valid
+            </div>
+            <div class="alert-success" *ngIf="Vemail.touched && Vemail.valid" style="width: 50%;">OK</div>
+        </div>
+        <div class="form-group">
+            <label for="pwd"><b>Password</b></label><br>
+            <input ngModel type="password" class="form-control" placeholder="Enter Password" name="passwd">
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Login</button>
+            <button type="button" class="btn btn-primary" routerLink="/SignUp">Sign Up</button>
+        </div>
+            <div class="form-group">
+            <button type="button" class="btn btn-secondory" routerLink="/ForgotPassword">Forgot Password</button>
+        </div>
+            <b style="position: absolute; left: 83px;">{{msg}}</b>
+      </form>
 </div>
-</form>
-<!-- <div class="copyright" style="margin-bottom: 0%;">All Rights Reserved. Copyright © Online Insurance Management System FoodWorks Ltd.</div> -->
+
 

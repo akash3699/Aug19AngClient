@@ -1,33 +1,61 @@
-<!-- <div style="width: 30%;">
-  <img src="./assets/IMGBIN_pizza-png.png" class="img-responsive" alt="DecoratorImg">
-  </div> -->
-<form #myForm="ngForm" (ngSubmit)="FormValidation(myForm)">
-  <div class="box">
-    <div class="imgcontainer">
-        <!-- <img src="./assets/pizza_icon.png" style="height: 120px; width: 120px;" alt="Online Insurance Management System_Icon" class="Icon"> -->
-    </div>
-    <h2 style="color: rgb(124, 8, 8);"><b>Welcome<br> to<br> Online Insurance Management System</b></h2>
-    <div class="container" style="text-align: left">
-        <!-- <label for="uname">Username</label><br>
-        <input ngModel type="text" placeholder="Enter Username" name="uname" required>
-        <br> -->
-        <label for="email">Email</label><br>
-        <input ngModel type="email" placeholder="Enter Email" name="email" required>
-        <br>
-        <label for="phone"><b>Phone Number</b></label><br>
-        <input ngModel type="number" placeholder="Enter Phone Number" name="mobile" required>
-        <br>
-        <!-- <label for="dob"><b>Date of Birth</b></label><br>
-        <input ngModel type="date" placeholder="Enter Date of Birth" name="dob" required>
-        <br> -->
-        <label for="pwd"><b>Password</b></label><br>
-        <input ngModel type="password" placeholder="Enter Password" name="passwd" required>
-        <br>
-        <button type="submit" style=" background-color:darkcyan;">Sign Up</button><br>
-        <button type="button" routerLink="/Home" class="cancelbtn">Cancel</button>
-        <button *ngIf="num" type="button"  routerLink="/Login" class="loginbtn">Go to Login</button><br>
-        <label style="position: absolute; left: 150px; "><b>{{msg}}</b></label>
-   </div>
+<div class="container">
+  <form #myForm="ngForm" (ngSubmit)="FormValidation(myForm)">
+    <div class="form-group">
+      <label for="inputEmail4">Email</label>
+      <input type="text" ngModel name="email" pattern="[[a-zA-Z0-9_\-\.]+@([a-zA-Z0-9_\-\.]+)\.[a-zA-Z]{2,5}]*"
+          #Vemail="ngModel" class="form-control" [class.alert-danger]=" Vemail.touched   && Vemail.invalid"
+          id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" required>
+      <div *ngIf="Vemail.touched && Vemail.invalid" style="width:20px;height: 20px;"
+          class="spinner-border text-danger" role="status">
+          <span class="sr-only">...</span>
+      </div>
+           <div class="alert-danger" *ngIf="Vemail.touched && Vemail.invalid" style="width:50%;">Email is not valid
+      </div>
+      <div class="alert-success" *ngIf="Vemail.touched && Vemail.valid" style="width: 50%;">OK</div>
   </div>
-</form>
-<!-- <div class="copyright">All Rights Reserved. Copyright © Online Insurance Management System FoodWorks Ltd.</div> -->
+    <div class="form-row">
+      <div class="form-group">
+        <label for="inputEmail4">Password</label>
+        <input type="password" ngModel #Vpass="ngModel" required
+          pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*" class="form-control"
+          name="passwd" id="inputEmail4" placeholder="Email">
+        <ng-container class="alert-danger" *ngIf="Vpass.touched && Vpass.invalid" style="width:200%;">
+          Passwords will contain mimimum 8 characters, at least 1 upper case letter, 1 lower case letter ,least 1 number or special character
+        </ng-container>
+        <div class="alert-success" *ngIf="Vpass.touched && Vpass.valid" style="width: 50%;">OK</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Phone Number</label>
+      <input type="number" ngModel class="form-control" id="mobile" name="mobile" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Signup</button>
+    <button type="button" routerLink="/Home" id="btn" class="btn btn-danger">Cancel</button>
+    <button *ngIf="num" routerLink="/Login" type="button" class="btn btn-success">Go to Login</button>
+  </form>
+  <div class="form-group">
+    <h4><b>{{msg}}</b></h4>
+  </div>
+</div>
+
+
+<!-- 
+<div class="container mt-5">
+  <form #myForm="ngForm" (ngSubmit)="FormValidation(myForm)">
+    <div class="container" style="text-align: left">
+      <label for="email">Email</label><br>
+      <input ngModel type="email" placeholder="Enter Email" name="email" required>
+      <br>
+      <label for="phone"><b>Phone Number</b></label><br>
+      <input ngModel type="number" placeholder="Enter Phone Number" name="mobile" required>
+      <br>
+      <label for="pwd"><b>Password</b></label><br>
+      <input ngModel type="password" placeholder="Enter Password" name="passwd" required>
+      <br>
+      <button type="submit" class="btn btn-primary">Sign Up</button><br>
+      <button type="button" routerLink="/Home" class="btn btn-danger">Cancel</button>
+      <button *ngIf="num" type="button" routerLink="/Login" class="btn btn-primary">Go to Login</button><br>
+      <label style="position: absolute; left: 150px; "><b>{{msg}}</b></label>
+    </div>
+  </form>
+</div> -->

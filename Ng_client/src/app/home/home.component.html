@@ -4,49 +4,51 @@
 <body>
   <h1 style="text-align: center;">Online Insurance Management System</h1>
 
-  
-<marquee>New updates:Insurance Policy</marquee>       
-<button type="button" routerLink="/AddPolicy" class="btn btn-info">Buy New Policy</button><br>
-<table class="table">
-<tr>
-<th>Policy ID</th>
-<th>Policy Name</th>
-<th>Policy Decription</th>
-<th>Years</th>
-<th>Buy Date</th>
-<th>Premium Amount</th>
-<th>Paid Premium Count</th>
-<th>Total Insurance Amount </th>
-<th>Next Premium Date </th>
-<th>Premium Payment Frequency</th>
-<th>Pay Premium</th>
 
-</tr>
-   
-   <tr *ngFor="let custdata of CustPolicyData"  routerLink="/PolicyDetails/{{this.custdata.policyid.policyid}}">
-       <!-- <ng-container *ngFor="let psdata of PremiumScheduleData"> -->
-       <td>{{this.custdata.policyid.policyid}}</td>
-       <td>{{this.custdata.policyid.policyname}}</td>
-       <td>{{this.custdata.policyid.policydescription}}</td>
-       <td>{{this.custdata.policyid.policyduration}}</td>
-       <td>{{this.custdata.buydate  |  date:'yyyy-MM-dd'}}</td>
-       <td>{{this.custdata.premiumamout}}</td>
-       <td>{{this.custdata.paidpremiumcount}}</td>
-       <td>{{this.custdata.policyid.totalinsuranceamount}}</td>
-       <td>{{this.custdata.premiumschedule.premiumdate  |  date:'yyyy-MM-dd' }}</td>
-       <td>{{this.custdata.ps}}</td>
-       <td *ngIf="this.custdata.premiumschedule.premiumdate" ><input type="button" class="btn btn-info" routerLink="/PayPremium/{{this.custdata.premiumschedule.premiumscheduleid}}" value="Pay Premium" /></td>
-       <td *ngIf="!this.custdata.premiumschedule.premiumdate" >All Premiums are Paid</td>
+  <marquee>New updates:Insurance Policy</marquee>
+  <button type="button" routerLink="/AddPolicy" class="btn btn-info">Buy New Policy</button><br>
+  <table class="table table-hover">
+      <thead>
+    <tr>
+      <th scope="col">Policy ID</th>
+      <th scope="col">Policy Name</th>
+      <th scope="col">Policy Decription</th>
+      <th scope="col">Years</th>
+      <th scope="col">Buy Date</th>
+      <th scope="col">Premium Amount</th>
+      <th scope="col">Paid Premium Count</th>
+      <th scope="col">Total Insurance Amount </th>
+      <th scope="col">Next Premium Date </th>
+      <th scope="col">Premium Payment Frequency</th>
+      <th scope="col">Pay Premium</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let custdata of CustPolicyData" routerLink="/PolicyDetails/{{this.custdata.policyid.policyid}}">
+      <!-- <ng-container *ngFor="let psdata of PremiumScheduleData"> -->
+      <td>{{this.custdata.policyid.policyid}}</td>
+      <td>{{this.custdata.policyid.policyname}}</td>
+      <td>{{this.custdata.policyid.policydescription}}</td>
+      <td>{{this.custdata.policyid.policyduration}}</td>
+      <td>{{this.custdata.buydate  |  date:'yyyy-MM-dd'}}</td>
+      <td>{{this.custdata.premiumamout}}</td>
+      <td>{{this.custdata.paidpremiumcount}}</td>
+      <td>{{this.custdata.policyid.totalinsuranceamount}}</td>
+      <td>{{this.custdata.premiumschedule.premiumdate  |  date:'yyyy-MM-dd' }}</td>
+      <td>{{this.custdata.ps}}</td>
+      <td *ngIf="this.custdata.premiumschedule.premiumdate"><input type="button" class="btn btn-info"
+          routerLink="/PayPremium/{{this.custdata.premiumschedule.premiumscheduleid}}" value="Pay Premium" /></td>
+      <td *ngIf="!this.custdata.premiumschedule.premiumdate">All Premiums are Paid</td>
       <!-- </ng-container> -->
       <!-- *ngIf="this.custdata.premiumschedule.premiumdate" -->
-  </tr>
+    </tr>
+    <tbody>
+
+
+  </table>
 
 
 
-</table>
-
-
-  
 
 </body>
 

@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class DataService {
 
-  serverurl:string="http://13.233.187.155:8080/DacAug2019/"
+  serverurl:string="http://13.233.187.155:8080/DacAug2019/";
   // serverurl:string="http://localhost:8080/DacAug2019/"
   constructor(public http: HttpClient) { }
 
@@ -52,7 +52,7 @@ export class DataService {
 
   UpdatePolicy(PolicyData:any)
   {
-    return this.http.put(this.serverurl+"policy/update",PolicyData);
+    return this.http.post(this.serverurl+"policy/update",PolicyData);
   }
 
 
@@ -76,12 +76,12 @@ export class DataService {
   // }
   UpdateUserData(UserData)
   {
-    return this.http.put(this.serverurl+"user/userdetails/" + UserData.userId, UserData);
+    return this.http.post(this.serverurl+"user/updateuserdetails/" + UserData.userId, UserData);
   }
 
   UpdateUserPassword(UserData)
   {
-    return this.http.put(this.serverurl+"user/userdetails/" + UserData.userId, UserData);
+    return this.http.post(this.serverurl+"user/userdetails/" + UserData.userId, UserData);
   }
 
   GetCustPolicyPremiumData(CustPolicyId:any)
