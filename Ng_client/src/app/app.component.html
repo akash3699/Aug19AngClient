@@ -1,42 +1,93 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light" *ngIf="!service.isAdmin()">
   <a class="navbar-brand" routerLink="/Home">OPMS</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <ul class="nav navbar-nav">
-        <li class="active nav-link">
-          <a routerLink="/Home">Home</a>
-        </li>
-        <li class="active nav-link">
-          <a routerLink="/AboutUs">About Us</a>
-        </li>
-        <li class="active nav-link">
-          <a routerLink="/ContactUs">Contact Us</a>
-        </li>
-      </ul>
-      <li class="nav-item dropdown nav-link">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false">
-          Menu
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" routerLink="Home" *ngIf="service.isLoggedIn()">DashBoard</a>
-          <a class="dropdown-item" routerLink="Profile" *ngIf="service.isLoggedIn()">My Profile</a>
-          <a class="dropdown-item" routerLink="HistoryofPaidPremium" *ngIf="service.isLoggedIn()">History of Paid
-            Premium</a>
-          <a class="dropdown-item" routerLink="ChangePassword" *ngIf="service.isLoggedIn()">Change Password</a>
-          <a class="dropdown-item" routerLink="ClaimTracker" *ngIf="service.isLoggedIn()">Claim Tracker</a>
-          <a class="dropdown-item" (click)="Logout()" *ngIf="service.isLoggedIn()">Logout</a>
-          <a class="dropdown-item" routerLink="Login" *ngIf="!service.isLoggedIn()">Login</a>
-        </div>
+  <div class="collapse navbar-collapse navbar-ex1-collapse" *ngIf="!service.isAdmin()">
+    <ul class="nav navbar-nav">
+      <li class="active">
+        <a routerLink="/Home">Home</a>
+      </li>
+      <li class="active">
+        <a routerLink="/AboutUs">About Us</a>
+      </li>
+      <li class="active">
+        <a routerLink="/ContactUs">Contact Us</a>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li class="active" *ngIf="!service.isLoggedIn()">
+        <a routerLink="/Login">Login</a>
+      </li>
+      <li class="active" *ngIf="service.isLoggedIn()">
+        <a routerLink="/Profile">Profile</a>
+      </li>
+      <li class="active" *ngIf="service.isLoggedIn()">
+        <a href="#" (click)="Logout()">Logout</a>
+      </li>
+      <li class="active" *ngIf="!service.isLoggedIn()">
+        <a routerLink="/SignUp">SignUp</a>
+      </li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Menu <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a routerLink="Home" *ngIf="service.isLoggedIn()">DashBoard</a></li>
+          <li><a routerLink="Profile" *ngIf="service.isLoggedIn()">My Profile</a></li>
+          <li><a routerLink="HistoryofPaidPremium" *ngIf="service.isLoggedIn()">History of Paid Premium</a></li>
+          <li><a routerLink="ChangePassword" *ngIf="service.isLoggedIn()">Change Password</a></li>
+          <li><a routerLink="ClaimTracker" *ngIf="service.isLoggedIn()">Claim Tracker</a></li>
+          <li><a (click)="Logout()" *ngIf="service.isLoggedIn()">Logout</a></li>
+          <li><a routerLink="Login" *ngIf="!service.isLoggedIn()">Login</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+</nav>
+<nav class="navbar navbar-expand-lg navbar-light bg-light" *ngIf="service.isAdmin()">
+  <a class="navbar-brand" routerLink="/Home">OPMS</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse navbar-ex1-collapse" *ngIf="service.isAdmin()">
+    <ul class="nav navbar-nav">
+      <li class="active">
+        <a routerLink="/Admin">Home</a>
+      </li>
+      <li class="active">
+        <a routerLink="/AboutUs">About Us</a>
+      </li>
+      <li class="active">
+        <a routerLink="/ContactUs">Contact Us</a>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li class="active" *ngIf="!service.isLoggedIn()">
+        <a routerLink="/Login">Login</a>
+      </li>
+      <li class="active" *ngIf="service.isLoggedIn()">
+        <a href="#" (click)="Logout()">Logout</a>
+      </li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Menu <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a routerLink="/Admin/CustomerPolicyDetails" *ngIf="service.isLoggedIn()">DashBoard</a></li>
+          <li><a routerLink="/Admin/AddPolicy" *ngIf="service.isLoggedIn()">Add Policy</a></li>
+          <li><a routerLink="/Admin/AddClaimTracker" *ngIf="service.isLoggedIn()">Add Claim Tracker</a></li>
+          <li><a routerLink="/Admin/AllClaimTrackers" *ngIf="service.isLoggedIn()">All Claim Tracker</a></li>
+          <li><a routerLink="/ChangePassword" *ngIf="service.isLoggedIn()">Change Password</a></li>
+          <li><a (click)="Logout()" *ngIf="service.isLoggedIn()">Logout</a></li>
+          <li><a routerLink="Login" *ngIf="!service.isLoggedIn()">Login</a></li>
+        </ul>
       </li>
     </ul>
   </div>
 </nav>
+
 
 <!-- ============================================================================================================== -->
 <!-- <div class="container-fluid"> -->
