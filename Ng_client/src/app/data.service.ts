@@ -81,7 +81,7 @@ export class DataService {
 
   UpdateUserPassword(UserData)
   {
-    return this.http.post(this.serverurl+"user/userdetails/" + UserData.userId, UserData);
+    return this.http.post(this.serverurl+"user/userdetails/changepasswd/" + UserData.userId, UserData);
   }
 
   GetCustPolicyPremiumData(CustPolicyId:any)

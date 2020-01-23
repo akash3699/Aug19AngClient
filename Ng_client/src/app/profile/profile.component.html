@@ -1,49 +1,74 @@
 <div class="container">
-    <form >
-    <h2 style="color: rgb(124, 8, 8);"><b>{{UserProfileData.fname}}</b></h2>
-    <div class="row">
-        <div class="col">
-            <label for="exampleInputEmail1">First Name</label>
+    <form>
+        <h3 style="color: rgb(124, 8, 8);"><b>Hello {{UserProfileData.fname}}</b></h3>
+        
+        <div class="row">
+            <div class="col">
+                <label for="exampleInputEmail1">First Name</label>
+            </div>
+            <div class="col">
+                <label for="exampleInputEmail1">{{this.UserProfileData.fname}}</label>
+            </div>
         </div>
-        <div class="col">
-            <label for="exampleInputEmail1">{{this.UserProfileData.fname}}</label>
+        <div class="row">
+            <div class="col">
+                <label for="exampleInputEmail1">Middle Name</label>
+            </div>
+            <div class="col">
+                <label for="exampleInputEmail1">{{this.UserProfileData.mname}}</label>
+            </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col">
-            <label for="exampleInputEmail1">Last Name</label>
+        <div class="row">
+            <div class="col">
+                <label for="exampleInputEmail1">Last Name</label>
+            </div>
+            <div class="col">
+                <label for="exampleInputEmail1">{{this.UserProfileData.lname}}</label>
+            </div>
         </div>
-        <div class="col">
-            <label for="exampleInputEmail1">{{this.UserProfileData.lname}}</label>
+        <div class="row">
+            <div class="col">
+                <label for="exampleInputEmail1">Nominee Name</label>
+            </div>
+            <div class="col">
+                <label for="exampleInputEmail1">{{this.UserProfileData.nname}}</label>
+            </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col">
-            <label for="exampleInputEmail1">Gender</label>
+        <div class="row">
+            <div class="col">
+                <label for="exampleInputEmail1">Nominee Relation</label>
+            </div>
+            <div class="col">
+                <label for="exampleInputEmail1">{{this.UserProfileData.nrelation}}</label>
+            </div>
         </div>
-        <div class="col">
-            <label for="exampleInputEmail1">{{this.UserProfileData.gender}}</label>
+        <div class="row">
+            <div class="col">
+                <label for="exampleInputEmail1">Gender</label>
+            </div>
+            <div class="col">
+                <label for="exampleInputEmail1">{{this.UserProfileData.gender}}</label>
+            </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col">
-            <label for="exampleInputEmail1">Phone Number</label>
+        <div class="row">
+            <div class="col">
+                <label for="exampleInputEmail1">Phone Number</label>
+            </div>
+            <div class="col">
+                <label for="exampleInputEmail1">{{this.UserProfileData.mobile}}</label>
+            </div>
         </div>
-        <div class="col">
-            <label for="exampleInputEmail1">{{this.UserProfileData.mobile}}</label>
+        <div class="row">
+            <div class="col">
+                <label for="exampleInputEmail1">Date of Birth</label>
+            </div>
+            <div class="col">
+                <label for="exampleInputEmail1">{{this.UserProfileData.dob |  date:'yyyy-MM-dd'}}</label>
+            </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col">
-            <label for="exampleInputEmail1">Date of Birth</label>
-        </div>
-        <div class="col">
-            <label for="exampleInputEmail1">{{this.UserProfileData.dob |  date:'yyyy-MM-dd'}}</label>
-        </div>
-    </div>
 
-    <button type="button" routerLink="/EditProfile" class="btn btn-primary">Edit Profile</button>
-</form>
+        <button type="button" routerLink="/EditProfile" class="btn btn-primary">Edit Profile</button>
+    </form>
 </div>
 
 

@@ -1,11 +1,22 @@
-.footer{
-    position: fixed;
-
-    left: 0;
-    bottom: 0;
+.footer-basic-centered {
+    background-color: rgb(155, 161, 161);
+    /* #292c2f */
+    color: rgb(156, 240, 131);
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
     width: 100%;
     text-align: center;
-    height: 45px;
-    background-color:slategray ;
-    color:white;
+    font: normal 18px sans-serif;
+    padding: 37px;
+    margin-top: 80px;
+}
+
+footer {
+    position: absolute;
+    position: bottom;
+    display: block;
+}
+
+.ftlogo{
+    color: azure;
 }

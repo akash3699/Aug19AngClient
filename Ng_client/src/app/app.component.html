@@ -88,10 +88,37 @@
   </div>
 </nav>
 
+<router-outlet></router-outlet>
+
+<footer class="footer-basic-centered">
+  <p class="footer-company-motto"><b id="motto">Online Policy Management System</b></p>
+  <p class="footer-links">
+
+    <a class="ftlogo" href="/" id="links"> Home Page |</a>
+    <a class="ftlogo" routerLink="/ContactUs" id="links"> Contact Us |</a>
+    <a class="ftlogo" routerLink="/AboutUs" id="links"> About Us |</a>
+    <a class="ftlogo" routerLink="/" id="links"> Visit OPMS</a>
+  </p>
+  <p class="footer-company-name">© 2020 OPMS India. All rights reserved.</p>
+  <div class="align-middle text-center" id="links">
+    <h3 class="text-white typography-5 mb-10">Follow Us</h3>
+    <a class="ftlogo" href="https://www.facebook.com/"> <img width="24" height="24" alt="Like us on Facebook"
+        src="http://cache1.artprintimages.com/images/jump_pages/rebrand/footer/fb.png"> Facebook |</a>
+    <a class="ftlogo" href="https://twitter.com/"> <img width="67" alt="Follow us on Twitter"
+        src="http://cache1.artprintimages.com/images/jump_pages/rebrand/footer/twitter.png"> Twitter |</a>
+    <a class="ftlogo" href="https://www.instagram.com/"><img width="24" height="24" alt="Follow us on Instagram"
+        src="http://cache1.artprintimages.com/images/jump_pages/rebrand/footer/instagram-badge.png"> Instagram </a>
+  </div>
+
+
+
+</footer>
+
+
 
 <!-- ============================================================================================================== -->
 <!-- <div class="container-fluid"> -->
-  <!-- <nav class="navbar navbar-default" role="navigation">
+<!-- <nav class="navbar navbar-default" role="navigation">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
         <span class="sr-only">Toggle navigation</span>
@@ -176,4 +203,3 @@
       </ul>
     </div>
   </nav> -->
-  <router-outlet></router-outlet>

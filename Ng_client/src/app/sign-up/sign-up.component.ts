@@ -20,7 +20,10 @@ export class SignUpComponent implements OnInit {
       UserData.form.value.passwd == "") {
       this.msg = "All fields are compulsory!!";
     }
-    else {
+    else if(UserData.form.value.mobile.toString().length !=10){
+      this.msg = "Phone no should be 10 numbers!!";
+    }
+    else{
       
       let resultstate:any = this.service.SignupData(UserData.form.value);
       

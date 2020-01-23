@@ -1,15 +1,24 @@
 <div class="container">
   <h1><b>Edit Profile</b></h1>
-  <label for="userId">UserId</label>
-  <input [(ngModel)]="UserData.userId" readonly type="text" class="form-control" id="userId" name="userId">
+  <!-- <label for="userId">UserId</label> -->
+  <input [(ngModel)]="UserData.userId" hidden readonly type="text" class="form-control" id="userId" name="userId">
   <label for="email">Email Address</label>
   <input [(ngModel)]="UserData.email" readonly type="text" class="form-control" id="email" name="email">
   <label for="fname">Fisrt Name</label>
   <input [(ngModel)]="UserData.fname" placeholder="Enter First Name" type="text" class="form-control" id="fname"
     name="fname">
+  <label for="mname">Middle Name</label>
+  <input [(ngModel)]="UserData.mname" type="text" placeholder="Enter Middle Name" class="form-control" id="mname"
+    name="mname">
   <label for="lname">Last Name</label>
   <input [(ngModel)]="UserData.lname" type="text" placeholder="Enter Last Name" class="form-control" id="lname"
     name="lname">
+  <label for="nname">Nominee Name</label>
+  <input [(ngModel)]="UserData.nname" type="text" placeholder="Enter Nominee Name" class="form-control" id="nname"
+    name="nname">
+  <label for="nrelation">Nominee Relation</label>
+  <input [(ngModel)]="UserData.nrelation" type="text" placeholder="Enter Nominee Relation" class="form-control"
+    id="nrelation" name="nrelation">
   <label for="mobile">Phone Number</label>
   <input [(ngModel)]="UserData.mobile" style=" margin: 5px 0px;" placeholder="Enter Mobile No" type="text"
     class="form-control" id="mobile" name="mobile">
