@@ -94,7 +94,7 @@ import { AdminEditClaimTrackersComponent } from './admin-edit-claim-trackers/adm
       {path : "Login" , component : LoginComponent},
       {path : "ForgotPassword" , component : ForgotPasswordComponent},
       {path : "SignUp" , component : SignUpComponent},
-      {path : "**" , component : NotFoundComponent}
+      {path : "**" , component : LoginComponent}
     ]),
     AppRoutingModule
   ],
