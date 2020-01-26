@@ -12,6 +12,9 @@ export class EditProfileComponent implements OnInit {
   UserData:any;
   dob:any;
   msg:string;
+  MALE:string="MALE"
+  FEMALE:string="FEMALE"
+  OTHER:string="OTHER"
   constructor(public routes: ActivatedRoute,
     public DataService: DataService,
     public router: Router) {

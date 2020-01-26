@@ -1,12 +1,117 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light" *ngIf="!service.isAdmin()">
+<nav id="myNav" class="navbar navbar-expand-lg navbar-light fontnav 
+" style="background-color:  #bdf1f3;  font-family: 'Merienda One', cursive;">
+
+  <a class="navbar-brand">OPMS</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="nav navbar-nav mr-auto">
+          <li class="active">
+            <a routerLink="/Home">Home</a>
+          </li>
+          <li class="active">
+            <a routerLink="/AboutUs">About Us</a>
+          </li>
+          <li class="active">
+            <a routerLink="/ContactUs">Contact Us</a>
+          </li>
+          <li class="active"><a  (click)="Logout()" *ngIf="service.isLoggedIn()">Logout</a></li>
+              <li class="active"><a routerLink="Login" *ngIf="!service.isLoggedIn()">Login</a></li>
+        </ul>
+    <ul class="navbar-nav mr-auto">
+      
+
+
+
+      <!-- for Customer -->
+      <div *ngIf="service.isLoggedIn()">
+        <div *ngIf="service.isAdmin()">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle active navbar-right" data-toggle="dropdown">Admin Menu <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a routerLink="/Admin/CustomerPolicyDetails" *ngIf="service.isLoggedIn()">DashBoard</a></li>
+              <li><a routerLink="/Admin/AddPolicy" *ngIf="service.isLoggedIn()">Add Policy</a></li>
+              <li><a routerLink="/Admin/AddClaimTracker" *ngIf="service.isLoggedIn()">Add Claim Tracker</a></li>
+              <li><a routerLink="/Admin/AllClaimTrackers" *ngIf="service.isLoggedIn()">All Claim Tracker</a></li>
+              <li><a routerLink="/ChangePassword" *ngIf="service.isLoggedIn()">Change Password</a></li>
+              <li><a (click)="Logout()" *ngIf="service.isLoggedIn()">Logout</a></li>
+              <li><a routerLink="Login" *ngIf="!service.isLoggedIn()">Login</a></li>
+            </ul>
+          </li>
+        </div>
+      </div>
+
+
+
+      <!-- for Admin -->
+      <div *ngIf="service.isLoggedIn()">
+        <div *ngIf="!service.isAdmin()">
+          <li class="nav-item dropdown">
+            <a href="#" class="nav-link navbar-right dropdown-toggle active" role="button" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="">User Menu <b ></b></a>
+            <ul class="dropdown-menu ">
+              <li><a routerLink="Home" *ngIf="service.isLoggedIn()">DashBoard</a></li>
+              <li><a routerLink="Profile" *ngIf="service.isLoggedIn()">My Profile</a></li>
+              <li><a routerLink="HistoryofPaidPremium" *ngIf="service.isLoggedIn()">History of Paid Premium</a></li>
+              <li><a routerLink="ChangePassword" *ngIf="service.isLoggedIn()">Change Password</a></li>
+              <li><a routerLink="ClaimTracker" *ngIf="service.isLoggedIn()">Claim Tracker</a></li>
+              <li><a (click)="Logout()" *ngIf="service.isLoggedIn()">Logout</a></li>
+              <li><a routerLink="Login" *ngIf="!service.isLoggedIn()">Login</a></li>
+            </ul>
+          </li>
+        </div>
+      </div>
+
+
+    </ul>
+  </div>
+
+  <ul class="nav navbar-nav navbar-right ml-auto">
+    <li class="nav-item"><a href="#" class="nav-link"><i class="fa fa-facebook"></i></a></li>
+    <li class="nav-item"><a href="#" class="nav-link"><i class="fa fa-twitter"></i></a></li>
+    <li class="nav-item"><a href="#" class="nav-link"><i class="fa fa-pinterest-p"></i></a></li>
+  </ul>
+
+</nav>
+<router-outlet></router-outlet>
+<footer class="footer-basic-centered">
+    <p class="footer-company-motto"><b id="motto">Online Policy Management System</b></p>
+    <p class="footer-links">
+  
+      <a class="ftlogo" href="/" id="links"> Home Page |</a>
+      <a class="ftlogo" routerLink="/ContactUs" id="links"> Contact Us |</a>
+      <a class="ftlogo" routerLink="/AboutUs" id="links"> About Us |</a>
+      <a class="ftlogo" routerLink="/" id="links"> Visit OPMS</a> |
+      <a (click)="Logout()" *ngIf="service.isLoggedIn()">Logout</a>
+      <a routerLink="Login" *ngIf="!service.isLoggedIn()">Login</a>
+    </p>
+    <p class="footer-company-name">© 2020 OPMS India. All rights reserved.</p>
+    <div class="align-middle text-center" id="links">
+      <h3 class="text-white typography-5 mb-10">Follow Us</h3>
+      <a class="ftlogo" href="https://www.facebook.com/"> <img width="24" height="24" alt="Like us on Facebook"
+          src="http://cache1.artprintimages.com/images/jump_pages/rebrand/footer/fb.png"> Facebook |</a>
+      <a class="ftlogo" href="https://twitter.com/"> <img width="67" alt="Follow us on Twitter"
+          src="http://cache1.artprintimages.com/images/jump_pages/rebrand/footer/twitter.png"> Twitter |</a>
+      <a class="ftlogo" href="https://www.instagram.com/"><img width="24" height="24" alt="Follow us on Instagram"
+          src="http://cache1.artprintimages.com/images/jump_pages/rebrand/footer/instagram-badge.png"> Instagram </a>
+    </div>
+  
+  
+  
+  </footer>
+
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light" *ngIf="!service.isAdmin()">
   <a class="navbar-brand" routerLink="/Home">OPMS</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="collapse navbar-collapse navbar-ex1-collapse" *ngIf="!service.isAdmin()">
-    <ul class="nav navbar-nav">
+  <div class="collapse navbar-collapse" *ngIf="!service.isAdmin()">
+    <ul class="nav navbar-nav mr-auto">
       <li class="active">
         <a routerLink="/Home">Home</a>
       </li>
@@ -30,9 +135,9 @@
       <li class="active" *ngIf="!service.isLoggedIn()">
         <a routerLink="/SignUp">SignUp</a>
       </li>
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Menu <b class="caret"></b></a>
-        <ul class="dropdown-menu">
+      <li class="nav-item dropdown">
+        <a href="#" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="">Menu <b class="caret"></b></a>
+        <ul class="dropdown-menu ">
           <li><a routerLink="Home" *ngIf="service.isLoggedIn()">DashBoard</a></li>
           <li><a routerLink="Profile" *ngIf="service.isLoggedIn()">My Profile</a></li>
           <li><a routerLink="HistoryofPaidPremium" *ngIf="service.isLoggedIn()">History of Paid Premium</a></li>
@@ -42,6 +147,12 @@
           <li><a routerLink="Login" *ngIf="!service.isLoggedIn()">Login</a></li>
         </ul>
       </li>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <a class="dropdown-item" routerLink="/seller/addproduct">Add New Product</a>
+        <a class="dropdown-item" href="#">Update Product</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="#">See Transaction</a>
+      </div>
     </ul>
   </div>
 
@@ -53,8 +164,8 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="collapse navbar-collapse navbar-ex1-collapse" *ngIf="service.isAdmin()">
-    <ul class="nav navbar-nav">
+  <div class="collapse navbar-collapse" *ngIf="service.isAdmin()">
+    <ul class="nav navbar-nav mr-auto">
       <li class="active">
         <a routerLink="/Admin">Home</a>
       </li>
@@ -97,7 +208,9 @@
     <a class="ftlogo" href="/" id="links"> Home Page |</a>
     <a class="ftlogo" routerLink="/ContactUs" id="links"> Contact Us |</a>
     <a class="ftlogo" routerLink="/AboutUs" id="links"> About Us |</a>
-    <a class="ftlogo" routerLink="/" id="links"> Visit OPMS</a>
+    <a class="ftlogo" routerLink="/" id="links"> Visit OPMS</a> |
+    <a (click)="Logout()" *ngIf="service.isLoggedIn()">Logout</a>
+    <a routerLink="Login" *ngIf="!service.isLoggedIn()">Login</a>
   </p>
   <p class="footer-company-name">© 2020 OPMS India. All rights reserved.</p>
   <div class="align-middle text-center" id="links">
@@ -113,7 +226,7 @@
 
 
 </footer>
-
+ -->
 
 
 <!-- ============================================================================================================== -->

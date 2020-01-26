@@ -6,8 +6,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class DataService {
 
-  serverurl:string="http://13.233.187.155:8080/DacAug2019/";
-  // serverurl:string="http://localhost:8080/DacAug2019/"
+  // serverurl:string="http://13.233.187.155:8080/DacAug2019/";
+  serverurl:string="http://localhost:8080/DacAug2019/"
   constructor(public http: HttpClient) { }
 
   LoginData(user: any) {
